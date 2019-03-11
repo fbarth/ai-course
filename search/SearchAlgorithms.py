@@ -1,6 +1,13 @@
 from collections import deque
 from Graph import Node
 
+#
+# Implements search algorithms:
+# 1) Breadth-first search (BuscaLargura)
+# 2) Depth-first search (BuscaProfundidade)
+# 3) others TODO
+#
+
 class SearchAlgorithm:
     def search(self):
         pass

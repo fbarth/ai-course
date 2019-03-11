@@ -2,47 +2,36 @@ from SearchAlgorithms import BuscaLargura
 from SearchAlgorithms import BuscaProfundidade
 from Graph import State
 
-#
-# Implements a very simple problem to ilustrate search algorithms
-#
-# Initial state: 1
-# Operations: +1 and +2
-# Final state: any number bigger than 0
+# TODO
+# Implements a simplified version of vacuum world problem
 #
 
-class PlusOneTwo(State):
+class VacuumWorld(State):
 
-    def __init__(self, number, op):
-        self.number = number
-        self.operator = op
+    def __init__(self):
+        pass
     
     def sucessors(self):
-        sucessors = []
-        sucessors.append(PlusOneTwo(self.number+2, '2'))
-        sucessors.append(PlusOneTwo(self.number+1, '1'))
-        return sucessors
+        pass
     
     def is_goal(self):
-        if self.number == 10:
-            return True
-        return False
+        pass
     
     def description(self):
-        return "Problema simples com operadores de soma 1 e soma 2. Estados representados apenas por um numero"
+        return "bla"
     
     def cost(self):
         return 1
 
     def print(self):
-        return str(self.operator)
-
+        pass
 
 def main():
     
     #
     # Executando busca em largura
     #
-    state = PlusOneTwo(1, '')
+    state = None #TODO
     algorithm = BuscaLargura()
     result = algorithm.search(state)
     if result != None:
@@ -54,7 +43,7 @@ def main():
     #
     # Executando busca em profundidade
     #
-    state = PlusOneTwo(1, '')
+    state = None #TODO
     algorithm = BuscaProfundidade()
     result = algorithm.search(state, 10)
     if result != None:
@@ -62,9 +51,6 @@ def main():
         print(result.show_path())
     else:
         print('Nao achou solucao')
-
-
-
 
 if __name__ == '__main__':
     main()

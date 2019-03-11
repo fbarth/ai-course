@@ -1,5 +1,10 @@
 from abc import ABC, abstractmethod
 
+#
+# Implements basic data structures necessary to implement 
+# search algorithms
+#
+
 class Node:
     def __init__(self,state,father_node):
         self.state = state
