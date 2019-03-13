@@ -17,9 +17,7 @@ class VacuumWorld(State):
         pass
     
     def is_goal(self):
-        if self == None:
-            return True
-        return False
+        pass
     
     def description(self):
         return "Implementa o problema do aspirador de pó com 4 quartos"
