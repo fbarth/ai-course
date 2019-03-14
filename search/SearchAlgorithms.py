@@ -5,7 +5,9 @@ from Graph import Node
 # Implements search algorithms:
 # 1) Breadth-first search (BuscaLargura)
 # 2) Depth-first search (BuscaProfundidade)
-# 3) others TODO
+# 3) Iterative deepening search (BPI)
+# 4) Uniform cost search (CustoUniforme)
+# 5) others TODO
 #
 
 class SearchAlgorithm:
@@ -13,7 +15,7 @@ class SearchAlgorithm:
         pass
 
 #
-# This class implements Breadth-first search
+# This class implements the Breadth-first search
 #
 class BuscaLargura (SearchAlgorithm):
 
@@ -31,7 +33,7 @@ class BuscaLargura (SearchAlgorithm):
 
 
 #
-# This class implements Depth-first search
+# This class implements the Depth-first search (limited)
 #
 class BuscaProfundidade (SearchAlgorithm):
 
