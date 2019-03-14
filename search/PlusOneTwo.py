@@ -43,6 +43,7 @@ def main():
     #
     # Executando busca em largura
     #
+    print('Busca em largura')
     state = PlusOneTwo(1, '')
     algorithm = BuscaLargura()
     result = algorithm.search(state)
@@ -55,6 +56,7 @@ def main():
     #
     # Executando busca em profundidade
     #
+    print('Busca em profundidade')
     state = PlusOneTwo(1, '')
     algorithm = BuscaProfundidade()
     result = algorithm.search(state, 10)
@@ -67,11 +69,15 @@ def main():
     #
     # Executando busca em profundidade iterativa
     #
+    print('Busca em profundidade iterativa')
     state = PlusOneTwo(1, '')
     algorithm = BuscaProfundidadeIterativa()
     result = algorithm.search(state)
-    print('Achou!')
-    print(result.show_path())
+    if result != None:
+        print('Achou!')
+        print(result.show_path())
+    else:
+        print('Nao achou solucao')
 
 
 if __name__ == '__main__':
