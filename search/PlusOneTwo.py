@@ -1,5 +1,6 @@
 from SearchAlgorithms import BuscaLargura
 from SearchAlgorithms import BuscaProfundidade
+from SearchAlgorithms import BuscaProfundidadeIterativa
 from Graph import State
 
 #
@@ -63,7 +64,14 @@ def main():
     else:
         print('Nao achou solucao')
 
-
+    #
+    # Executando busca em profundidade iterativa
+    #
+    state = PlusOneTwo(1, '')
+    algorithm = BuscaProfundidadeIterativa()
+    result = algorithm.search(state)
+    print('Achou!')
+    print(result.show_path())
 
 
 if __name__ == '__main__':

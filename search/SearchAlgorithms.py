@@ -47,3 +47,18 @@ class BuscaProfundidade (SearchAlgorithm):
                 for i in n.state.sucessors():
                     open.append(Node(i,n))
         return None
+
+#
+# This class implements Iterative Deepening Depth-first search
+#
+class BuscaProfundidadeIterativa (SearchAlgorithm):
+
+    def search (self, initialState): 
+        n = 1
+        result = None
+        algorithm = BuscaProfundidade()
+        while (result == None):
+            result = algorithm.search(initialState, n)
+            if (result != None):
+                return result
+            n = n+1
