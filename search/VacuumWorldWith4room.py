@@ -7,7 +7,7 @@ from Graph import State
 # with 4 room
 #
 
-class VacuumWorld(State):
+class VacuumWorldWith4room(State):
 
     def __init__(self, left, right, vacuum, op):
         pass
