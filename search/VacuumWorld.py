@@ -1,6 +1,6 @@
 from SearchAlgorithms import BuscaLargura
 from SearchAlgorithms import BuscaProfundidade
-from SearchAlforithms import BuscaProfundidadeIterativa
+from SearchAlgorithms import BuscaProfundidadeIterativa
 from Graph import State
 
 # 
@@ -21,26 +21,29 @@ from Graph import State
 class VacuumWorld(State):
 
     def __init__(self, vacuumPosition, isLeftRoomClean, isRightRoomClean, op):
-        self.vacuumPosition = vacuumPostion
-		self.isLeftRoomClean = isLeftRoomClean
-		self.isRightRoomClean = isRightRoomClean
-		self.operator = op
+        self.vacuumPosition = vacuumPosition # [right, left]
+        self.isLeftRoomClean = isLeftRoomClean #[True, False]
+        self.isRightRoomClean = isRightRoomClean #[True, False]
+        self.operator = op # string that describes the operation
     
     def sucessors(self):
-        successors = []
+        sucessors = []
+        # É necessario verificar a VacuumPos antes de mover a Vacuum?
+        # Nao eh necessario
+        sucessors.append(VacuumWorld('right', self.isLeftRoomClean, self.isRightRoomClean, 'Move Right'))
+        sucessors.append(VacuumWorld('left', self.isLeftRoomClean, self.isRightRoomClean, 'Move Left'))
 		
-	    #É necessario verificar a VacuumPos antes de mover a Vacuum?
-		
-		sucessors.append(VacuumWorld('right', self.isLeftRoomClean, self.isRightRoomClean, 'Move Right'))
-		sucessors.append(VacuumWorld('left', self.isLeftRoomClean, self.isRightRoomClean, 'Move Left'))
-		
-		#TODO: Implementar ações de limpeza. Importante: Verificar qual a VacuumPos e se a posição está suja
+		#Implementar ações de limpeza. Importante: Verificar qual a VacuumPos e se a posição está suja
 		#Como designar sucessors condicionais?
-		
-		return sucessors
+        if (self.vacuumPosition == 'right'):
+            sucessors.append(VacuumWorld(self.vacuumPosition, self.isLeftRoomClean, True, 'clean'))
+        else:
+            sucessors.append(VacuumWorld(self.vacuumPosition, True, self.isRightRoomClean, 'clean'))
+        
+        return sucessors
     
     def is_goal(self):
-        return (isLeftRoomClean && isRightRoomClean)
+        return (self.isLeftRoomClean and self.isRightRoomClean)
     
     def description(self):
         return "Problema do aspirador de pó, contendo duas salas"
@@ -56,7 +59,7 @@ def main():
     #
     # Executando busca em largura
     #
-    state = VacuumWorld('left', false, false, '')
+    state = VacuumWorld('left', False, False, '')
     algorithm = BuscaLargura()
     result = algorithm.search(state)
     if result != None:
@@ -68,7 +71,7 @@ def main():
     #
     # Executando busca em profundidade
     #
-    state = VacuumWorld('left', false, false, '')
+    state = VacuumWorld('left', False, False, '')
     algorithm = BuscaProfundidade()
     result = algorithm.search(state, 10)
     if result != None:
