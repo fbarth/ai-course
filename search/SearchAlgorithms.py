@@ -1,6 +1,11 @@
 from collections import deque
 from Graph import Node
 
+# function used to sort a list
+def sortG(val):
+    return val[1]
+
+
 #
 # Implements search algorithms:
 # 1) Breadth-first search (BuscaLargura)
@@ -64,3 +69,23 @@ class BuscaProfundidadeIterativa (SearchAlgorithm):
             if (result != None):
                 return result
             n = n+1
+
+#
+# This class implements a Uniform cost search algorithm
+#
+class BuscaCustoUniforme (SearchAlgorithm):
+
+    def search (self, initialState):
+        open = []
+        new_n = Node(initialState, None)
+        open.append((new_n, new_n.g))
+        while (len(open) > 0):
+            #list sorted by g()
+            open.sort(key = sortG, reverse = True)
+            n = open.pop()[0]
+            if (n.state.is_goal()):
+                return n
+            for i in n.state.sucessors():
+                new_n = Node(i,n)
+                open.append((new_n,new_n.g))
+        return None

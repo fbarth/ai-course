@@ -1,6 +1,7 @@
 from SearchAlgorithms import BuscaLargura
 from SearchAlgorithms import BuscaProfundidade
 from SearchAlgorithms import BuscaProfundidadeIterativa
+from SearchAlgorithms import BuscaCustoUniforme
 from Graph import State
 
 #
@@ -72,6 +73,19 @@ def main():
     print('Busca em profundidade iterativa')
     state = PlusOneTwo(1, '')
     algorithm = BuscaProfundidadeIterativa()
+    result = algorithm.search(state)
+    if result != None:
+        print('Achou!')
+        print(result.show_path())
+    else:
+        print('Nao achou solucao')
+
+    #
+    # Executando busca de custo uniforme
+    #
+    print('Busca de custo uniforme')
+    state = PlusOneTwo(1, '')
+    algorithm = BuscaCustoUniforme()
     result = algorithm.search(state)
     if result != None:
         print('Achou!')

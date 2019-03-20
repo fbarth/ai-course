@@ -11,7 +11,7 @@ class Node:
         self.father_node = father_node
         if self.father_node == None:
             self.depth = 0
-            self.g = state.cost()
+            self.g = 0
         else:
             self.depth = father_node.depth + 1
             self.g = state.cost() + self.father_node.g
