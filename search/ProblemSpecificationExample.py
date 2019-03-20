@@ -1,6 +1,6 @@
 from Graph import State
 
-class PlusOneTwo(State):
+class PloblemSpecification(State):
 
     def __init__(self, op):
         self.operator = op
