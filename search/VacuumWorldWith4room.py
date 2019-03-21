@@ -94,7 +94,7 @@ def main():
     # Executando busca em largura
     #
     print('Busca em largura')
-    state = VacuumWorld('top', 'left', True, True, False, False, '')
+    state = VacuumWorld('bottom', 'left', False, False, False, False, '')
     algorithm = BuscaLargura()
     result = algorithm.search(state)
     if result != None:
@@ -103,44 +103,44 @@ def main():
     else:
         print('Nao achou solucao')
     
-    #
-    # Executando busca em profundidade
-    #
-    print('Busca em profundidade')
-    state = VacuumWorld('top', 'left', False, False, False, False, '')
-    algorithm = BuscaProfundidade()
-    result = algorithm.search(state, 10)
-    if result != None:
-        print('Achou!')
-        print(result.show_path())
-    else:
-        print('Nao achou solucao')
+    # #
+    # # Executando busca em profundidade
+    # #
+    # print('Busca em profundidade')
+    # state = VacuumWorld('top', 'left', False, False, False, False, '')
+    # algorithm = BuscaProfundidade()
+    # result = algorithm.search(state, 10)
+    # if result != None:
+    #     print('Achou!')
+    #     print(result.show_path())
+    # else:
+    #     print('Nao achou solucao')
 
-    #
-    # Executando busca em profundidade iterativa
-    #
-    print('Busca em profundidade iterativa')
-    state = VacuumWorld('top', 'left', False, False, False, False, '')
-    algorithm = BuscaProfundidadeIterativa()
-    result = algorithm.search(state)
-    if result != None:
-        print('Achou!')
-        print(result.show_path())
-    else:
-        print('Nao achou solucao')
+    # #
+    # # Executando busca em profundidade iterativa
+    # #
+    # print('Busca em profundidade iterativa')
+    # state = VacuumWorld('top', 'left', False, False, False, False, '')
+    # algorithm = BuscaProfundidadeIterativa()
+    # result = algorithm.search(state)
+    # if result != None:
+    #     print('Achou!')
+    #     print(result.show_path())
+    # else:
+    #     print('Nao achou solucao')
 
-    #
-    # Executando busca de custo uniforme
-    #
-    print('Busca de custo uniforme')
-    state = VacuumWorld('top', 'left', False, False, False, False, '')
-    algorithm = BuscaCustoUniforme()
-    result = algorithm.search(state)
-    if result != None:
-        print('Achou!')
-        print(result.show_path())
-    else:
-        print('Nao achou solucao')
+    # #
+    # # Executando busca de custo uniforme
+    # #
+    # print('Busca de custo uniforme')
+    # state = VacuumWorld('top', 'left', False, False, False, False, '')
+    # algorithm = BuscaCustoUniforme()
+    # result = algorithm.search(state)
+    # if result != None:
+    #     print('Achou!')
+    #     print(result.show_path())
+    # else:
+    #     print('Nao achou solucao')
 
 if __name__ == '__main__':
     main()
