@@ -62,7 +62,6 @@ class BuscaProfundidadeIterativa (SearchAlgorithm):
 
     def search (self, initialState): 
         n = 1
-        result = None
         algorithm = BuscaProfundidade()
         while True:
             result = algorithm.search(initialState, n)
