@@ -1,7 +1,7 @@
 from SearchAlgorithms import BuscaProfundidadeIterativa
 from SearchAlgorithms import BuscaCustoUniforme
 from Graph import State
-import time;
+import time
 
 class Map(State):
 
