@@ -88,3 +88,43 @@ class BuscaCustoUniforme (SearchAlgorithm):
                 new_n = Node(i,n)
                 open.append((new_n,new_n.g))
         return None
+    
+#
+# This class implements a Greddy search algorithm
+#
+class BuscaGananciosa (SearchAlgorithm):
+
+    def search (self, initialState):
+        open = []
+        new_n = Node(initialState, None)
+        open.append((new_n, new_n.state.h_cost()))
+        while (len(open) > 0):
+            #list sorted by h_cost()
+            open.sort(key = sortG, reverse = True)
+            n = open.pop()[0]
+            if (n.state.is_goal()):
+                return n
+            for i in n.state.sucessors():
+                new_n = Node(i,n)
+                open.append((new_n,new_n.state.h_cost()))
+        return None
+
+#
+# This class implements an A* search algorithm
+#
+class BuscaAStar (SearchAlgorithm):
+
+    def search (self, initialState):
+        open = []
+        new_n = Node(initialState, None)
+        open.append((new_n, new_n.state.h_cost() + new_n.g))
+        while (len(open) > 0):
+            #list sorted by h_cost()
+            open.sort(key = sortG, reverse = True)
+            n = open.pop()[0]
+            if (n.state.is_goal()):
+                return n
+            for i in n.state.sucessors():
+                new_n = Node(i,n)
+                open.append((new_n,new_n.state.h_cost() + new_n.g))
+        return None
