@@ -1,6 +1,7 @@
 from SearchAlgorithms import BuscaProfundidadeIterativa
 from SearchAlgorithms import BuscaCustoUniforme
 from SearchAlgorithms import BuscaGananciosa
+from SearchAlgorithms import BuscaAStar
 from Graph import State
 import time
 
