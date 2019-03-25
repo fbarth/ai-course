@@ -1,5 +1,6 @@
 from SearchAlgorithms import BuscaProfundidadeIterativa
 from SearchAlgorithms import BuscaCustoUniforme
+from SearchAlgorithms import BuscaGananciosa
 from Graph import State
 import time
 
@@ -47,6 +48,11 @@ class Map(State):
         #return the cost to get at city "city"
         return self.cost_value
 
+    def h_cost(self):
+        #Metodo de calculo do custo heuristico
+        #Definir
+        return random.randint(1,101)
+    
     def print(self):
         return str(self.operator)
 
@@ -112,5 +118,30 @@ def main():
         print('Nao achou solucao')
     print('Tempo de processamento em segundos: ' + str(tf-ts))
 
+    
+    print('Busca por algoritmo Ganancioso: sair de h e chegar em o')
+    state = Map('h', 0, 'h', 'o')
+    algorithm = BuscaGananciosa()
+    ts = time.time()
+    result = algorithm.search(state)
+    tf = time.time()
+    if result != None:
+        print(result.show_path())
+    else:
+        print('Nao achou solucao')
+    print('Tempo de processamento em segundos: ' + str(tf-ts))
+    
+    print('Busca por algoritmo A*: sair de h e chegar em o')
+    state = Map('h', 0, 'h', 'o')
+    algorithm = BuscaAStar()
+    ts = time.time()
+    result = algorithm.search(state)
+    tf = time.time()
+    if result != None:
+        print(result.show_path())
+    else:
+        print('Nao achou solucao')
+    print('Tempo de processamento em segundos: ' + str(tf-ts))
+    
 if __name__ == '__main__':
     main()
