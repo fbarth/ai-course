@@ -21,8 +21,14 @@ class Node:
             return self.father_node.show_path()  + " ; " + self.state.operator 
         else:
             return self.state.operator
- 
 
+    def h(self):
+        #returns the heuristic function
+        pass
+    
+    def f(self):
+        #f(n) = g(n) + h(n)
+        return self.state.cost() + self.h()
 
 class State(ABC):
 
