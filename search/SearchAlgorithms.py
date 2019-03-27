@@ -2,7 +2,7 @@ from collections import deque
 from Graph import Node
 
 # function used to sort a list
-def sortG(val):
+def sortFunction(val):
     return val[1]
 
 
@@ -12,7 +12,8 @@ def sortG(val):
 # 2) Depth-first search (BuscaProfundidade)
 # 3) Iterative deepening search (BPI)
 # 4) Uniform cost search (CustoUniforme)
-# 5) others TODO
+# 5) Greddy search algorithm (BuscaGananciosa)
+# 6) A* search algorithm (BuscaAStar)
 #
 
 class SearchAlgorithm:
@@ -80,7 +81,7 @@ class BuscaCustoUniforme (SearchAlgorithm):
         open.append((new_n, new_n.g))
         while (len(open) > 0):
             #list sorted by g()
-            open.sort(key = sortG, reverse = True)
+            open.sort(key = sortFunction, reverse = True)
             n = open.pop()[0]
             if (n.state.is_goal()):
                 return n
@@ -97,16 +98,16 @@ class BuscaGananciosa (SearchAlgorithm):
     def search (self, initialState):
         open = []
         new_n = Node(initialState, None)
-        open.append((new_n, new_n.state.h_cost()))
+        open.append((new_n, new_n.state.h()))
         while (len(open) > 0):
-            #list sorted by h_cost()
-            open.sort(key = sortG, reverse = True)
+            #list sorted by h()
+            open.sort(key = sortFunction, reverse = True)
             n = open.pop()[0]
             if (n.state.is_goal()):
                 return n
             for i in n.state.sucessors():
                 new_n = Node(i,n)
-                open.append((new_n,new_n.state.h_cost()))
+                open.append((new_n,new_n.state.h()))
         return None
 
 #
@@ -117,14 +118,14 @@ class BuscaAStar (SearchAlgorithm):
     def search (self, initialState):
         open = []
         new_n = Node(initialState, None)
-        open.append((new_n, new_n.state.h_cost() + new_n.g))
+        open.append((new_n, new_n.state.h() + new_n.g))
         while (len(open) > 0):
-            #list sorted by h_cost()
-            open.sort(key = sortG, reverse = True)
+            #list sorted by f() = h() + g()
+            open.sort(key = sortFunction, reverse = True)
             n = open.pop()[0]
             if (n.state.is_goal()):
                 return n
             for i in n.state.sucessors():
                 new_n = Node(i,n)
-                open.append((new_n,new_n.state.h_cost() + new_n.g))
+                open.append((new_n,new_n.state.h() + new_n.g))
         return None

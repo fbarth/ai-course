@@ -4,6 +4,7 @@ from SearchAlgorithms import BuscaGananciosa
 from SearchAlgorithms import BuscaAStar
 from Graph import State
 import time
+import random
 
 class Map(State):
 
@@ -49,7 +50,7 @@ class Map(State):
         #return the cost to get at city "city"
         return self.cost_value
 
-    def h_cost(self):
+    def h(self):
         #Metodo de calculo do custo heuristico
         #Definir
         return random.randint(1,101)
