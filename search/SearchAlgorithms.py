@@ -5,7 +5,6 @@ from Graph import Node
 def sortFunction(val):
     return val[1]
 
-
 #
 # Implements search algorithms:
 # 1) Breadth-first search (BuscaLargura)
@@ -36,7 +35,6 @@ class BuscaLargura (SearchAlgorithm):
             for i in n.state.sucessors():
                 open.append(Node(i,n))
         return None
-
 
 #
 # This class implements the Depth-first search (limited)
@@ -98,7 +96,7 @@ class BuscaGananciosa (SearchAlgorithm):
     def search (self, initialState):
         open = []
         new_n = Node(initialState, None)
-        open.append((new_n, new_n.state.h()))
+        open.append((new_n, new_n.h))
         while (len(open) > 0):
             #list sorted by h()
             open.sort(key = sortFunction, reverse = True)
@@ -107,25 +105,25 @@ class BuscaGananciosa (SearchAlgorithm):
                 return n
             for i in n.state.sucessors():
                 new_n = Node(i,n)
-                open.append((new_n,new_n.state.h()))
+                open.append((new_n,new_n.h))
         return None
 
 #
-# This class implements an A* search algorithm
+# This class implements a A* search algorithm
 #
-class BuscaAStar (SearchAlgorithm):
+class AEstrela (SearchAlgorithm):
 
     def search (self, initialState):
         open = []
         new_n = Node(initialState, None)
-        open.append((new_n, new_n.state.h() + new_n.g))
+        open.append((new_n, new_n.f))
         while (len(open) > 0):
-            #list sorted by f() = h() + g()
+            #list sorted by f()
             open.sort(key = sortFunction, reverse = True)
             n = open.pop()[0]
             if (n.state.is_goal()):
                 return n
             for i in n.state.sucessors():
                 new_n = Node(i,n)
-                open.append((new_n,new_n.state.h() + new_n.g))
+                open.append((new_n,new_n.f))
         return None
