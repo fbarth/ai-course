@@ -2,6 +2,8 @@ from SearchAlgorithms import BuscaLargura
 from SearchAlgorithms import BuscaProfundidade
 from SearchAlgorithms import BuscaProfundidadeIterativa
 from SearchAlgorithms import BuscaCustoUniforme
+from SearchAlgorithms import BuscaGananciosa
+from SearchAlgorithms import BuscaAstar
 from Graph import State
 
 #
@@ -35,6 +37,11 @@ class PlusOneTwo(State):
     def cost(self):
         return 1
 
+    def h_cost(self):
+        #Metodo de calculo do custo heuristico
+        #Valor absoluto da distancia entre objetivo e proximo nó, garantindo que distancias negativas não existam
+        return (abs(10 - self.number))
+    
     def print(self):
         return str(self.operator)
 
@@ -93,6 +100,32 @@ def main():
     else:
         print('Nao achou solucao')
 
+    #
+    # Executando busca gananciosa
+    #
+    print('Busca Gananciosa')
+    state = PlusOneTwo(1, '')
+    algorithm = BuscaGananciosa()
+    result = algorithm.search(state)
+    if result != None:
+        print('Achou!')
+        print(result.show_path())
+    else:
+        print('Nao achou solucao')
+
+    #
+    # Executando busca A*
+    #
+    print('Busca A*')
+    state = PlusOneTwo(1, '')
+    algorithm = BuscaAStar()
+    result = algorithm.search(state)
+    if result != None:
+        print('Achou!')
+        print(result.show_path())
+    else:
+        print('Nao achou solucao')
+        
 
 if __name__ == '__main__':
     main()
