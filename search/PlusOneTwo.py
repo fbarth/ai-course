@@ -3,7 +3,7 @@ from SearchAlgorithms import BuscaProfundidade
 from SearchAlgorithms import BuscaProfundidadeIterativa
 from SearchAlgorithms import BuscaCustoUniforme
 from SearchAlgorithms import BuscaGananciosa
-from SearchAlgorithms import BuscaAstar
+from SearchAlgorithms import AEstrela
 from Graph import State
 
 #
@@ -16,6 +16,8 @@ from Graph import State
 
 class PlusOneTwo(State):
 
+    Goal = 100
+
     def __init__(self, number, op):
         self.number = number
         self.operator = op
@@ -27,7 +29,7 @@ class PlusOneTwo(State):
         return sucessors
     
     def is_goal(self):
-        if self.number == 10:
+        if self.number == PlusOneTwo.Goal:
             return True
         return False
     
@@ -37,10 +39,10 @@ class PlusOneTwo(State):
     def cost(self):
         return 1
 
-    def h_cost(self):
+    def h(self):
         #Metodo de calculo do custo heuristico
         #Valor absoluto da distancia entre objetivo e proximo nó, garantindo que distancias negativas não existam
-        return (abs(10 - self.number))
+        return (abs(PlusOneTwo.Goal - self.number))
     
     def print(self):
         return str(self.operator)
@@ -48,77 +50,77 @@ class PlusOneTwo(State):
 
 def main():
     
-    #
-    # Executando busca em largura
-    #
-    print('Busca em largura')
-    state = PlusOneTwo(1, '')
-    algorithm = BuscaLargura()
-    result = algorithm.search(state)
-    if result != None:
-        print('Achou!')
-        print(result.show_path())
-    else:
-        print('Nao achou solucao')
+    # #
+    # # Executando busca em largura
+    # #
+    # print('Busca em largura')
+    # state = PlusOneTwo(1, '')
+    # algorithm = BuscaLargura()
+    # result = algorithm.search(state)
+    # if result != None:
+    #     print('Achou!')
+    #     print(result.show_path())
+    # else:
+    #     print('Nao achou solucao')
     
-    #
-    # Executando busca em profundidade
-    #
-    print('Busca em profundidade')
-    state = PlusOneTwo(1, '')
-    algorithm = BuscaProfundidade()
-    result = algorithm.search(state, 10)
-    if result != None:
-        print('Achou!')
-        print(result.show_path())
-    else:
-        print('Nao achou solucao')
+    # #
+    # # Executando busca em profundidade
+    # #
+    # print('Busca em profundidade')
+    # state = PlusOneTwo(1, '')
+    # algorithm = BuscaProfundidade()
+    # result = algorithm.search(state, 10)
+    # if result != None:
+    #     print('Achou!')
+    #     print(result.show_path())
+    # else:
+    #     print('Nao achou solucao')
 
-    #
-    # Executando busca em profundidade iterativa
-    #
-    print('Busca em profundidade iterativa')
-    state = PlusOneTwo(1, '')
-    algorithm = BuscaProfundidadeIterativa()
-    result = algorithm.search(state)
-    if result != None:
-        print('Achou!')
-        print(result.show_path())
-    else:
-        print('Nao achou solucao')
+    # #
+    # # Executando busca em profundidade iterativa
+    # #
+    # print('Busca em profundidade iterativa')
+    # state = PlusOneTwo(1, '')
+    # algorithm = BuscaProfundidadeIterativa()
+    # result = algorithm.search(state)
+    # if result != None:
+    #     print('Achou!')
+    #     print(result.show_path())
+    # else:
+    #     print('Nao achou solucao')
 
-    #
-    # Executando busca de custo uniforme
-    #
-    print('Busca de custo uniforme')
-    state = PlusOneTwo(1, '')
-    algorithm = BuscaCustoUniforme()
-    result = algorithm.search(state)
-    if result != None:
-        print('Achou!')
-        print(result.show_path())
-    else:
-        print('Nao achou solucao')
+    # #
+    # # Executando busca de custo uniforme
+    # #
+    # print('Busca de custo uniforme')
+    # state = PlusOneTwo(1, '')
+    # algorithm = BuscaCustoUniforme()
+    # result = algorithm.search(state)
+    # if result != None:
+    #     print('Achou!')
+    #     print(result.show_path())
+    # else:
+    #     print('Nao achou solucao')
 
-    #
-    # Executando busca gananciosa
-    #
-    print('Busca Gananciosa')
-    state = PlusOneTwo(1, '')
-    algorithm = BuscaGananciosa()
-    result = algorithm.search(state)
-    if result != None:
-        print('Achou!')
-        print(result.show_path())
-    else:
-        print('Nao achou solucao')
+    # #
+    # # Executando busca gananciosa
+    # #
+    # print('Busca Gananciosa')
+    # state = PlusOneTwo(1, '')
+    # algorithm = BuscaGananciosa()
+    # result = algorithm.search(state)
+    # if result != None:
+    #     print('Achou!')
+    #     print(result.show_path())
+    # else:
+    #     print('Nao achou solucao')
 
     #
     # Executando busca A*
     #
     print('Busca A*')
     state = PlusOneTwo(1, '')
-    algorithm = BuscaAStar()
+    algorithm = AEstrela()
     result = algorithm.search(state)
     if result != None:
         print('Achou!')
