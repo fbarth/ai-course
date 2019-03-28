@@ -6,6 +6,7 @@ from Graph import State
 import time
 import networkx as nx
 import random
+import csv
 
 class Map(State):
 
@@ -36,8 +37,8 @@ class Map(State):
         return str(self.operator)
 
     def h(self):
-        #return Map.g[self.city,self.goal]
-        return random.randint(1,10)
+        return int(Map.g.edges[self.city,self.goal]['distance'])
+        #return random.randint(1,10)
         #return 1
 
 def createArea():
@@ -60,15 +61,21 @@ def createArea():
         'x':[(1,'m')]
         }
 
-#def createHeuristics():
-#    Map.g = nx.Graph()
-#    Map.g.add_edge('a','b', distance = 3)
+def createHeuristics():
+    #
+    # O arquvo MapHeuristics.csv considera apenas os objetivos "o" e "x"
+    # TODO modificar o arquivo para considerar todas as cidades
+    #
+    Map.g = nx.Graph()
+    f = csv.reader(open("MapHeuristics.csv","r"))
+    for row in f: 
+        Map.g.add_edge(row[0],row[1], distance = row[2])
 
 
 def main():
 
     createArea()
-    #createHeuristics()
+    createHeuristics()
 
     print('Busca em profundidade iterativa: sair de h e chegar em o')
     state = Map('h', 0, 'h', 'o')
@@ -156,6 +163,20 @@ def main():
 
     print('Busca por algoritmo A*: sair de h e chegar em o')
     state = Map('h', 0, 'h', 'o')
+    algorithm = AEstrela()
+    ts = time.time()
+    result = algorithm.search(state)
+    tf = time.time()
+    if result != None:
+        print(result.show_path())
+    else:
+        print('Nao achou solucao')
+    print('Tempo de processamento em segundos: ' + str(tf-ts))
+    print('O custo da solucao eh: '+str(result.g))
+    print('')
+
+    print('Busca por algoritmo A*: sair de i e chegar em x')
+    state = Map('i', 0, 'i', 'x')
     algorithm = AEstrela()
     ts = time.time()
     result = algorithm.search(state)

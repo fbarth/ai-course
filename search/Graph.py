@@ -27,7 +27,7 @@ class Node:
 
     def f(self):
         #f(n) = g(n) + h(n)
-        return self.state.cost() + self.h()
+        return self.g + self.h()
 
 class State(ABC):
 
