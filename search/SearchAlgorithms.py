@@ -12,7 +12,7 @@ def sortFunction(val):
 # 3) Iterative deepening search (BPI)
 # 4) Uniform cost search (CustoUniforme)
 # 5) Greddy search algorithm (BuscaGananciosa)
-# 6) A* search algorithm (BuscaAStar)
+# 6) A* search algorithm (AEstrela)
 #
 
 class SearchAlgorithm:
@@ -96,7 +96,8 @@ class BuscaGananciosa (SearchAlgorithm):
     def search (self, initialState):
         open = []
         new_n = Node(initialState, None)
-        open.append((new_n, new_n.h))
+        print(new_n.h())
+        open.append((new_n, new_n.h()))
         while (len(open) > 0):
             #list sorted by h()
             open.sort(key = sortFunction, reverse = True)
@@ -105,7 +106,7 @@ class BuscaGananciosa (SearchAlgorithm):
                 return n
             for i in n.state.sucessors():
                 new_n = Node(i,n)
-                open.append((new_n,new_n.h))
+                open.append((new_n, new_n.h()))
         return None
 
 #
@@ -116,7 +117,7 @@ class AEstrela (SearchAlgorithm):
     def search (self, initialState):
         open = []
         new_n = Node(initialState, None)
-        open.append((new_n, new_n.f))
+        open.append((new_n, new_n.f()))
         while (len(open) > 0):
             #list sorted by f()
             open.sort(key = sortFunction, reverse = True)
@@ -125,5 +126,5 @@ class AEstrela (SearchAlgorithm):
                 return n
             for i in n.state.sucessors():
                 new_n = Node(i,n)
-                open.append((new_n,new_n.f))
+                open.append((new_n,new_n.f()))
         return None
