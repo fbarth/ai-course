@@ -189,5 +189,20 @@ def main():
     print('O custo da solucao eh: '+str(result.g))
     print('')
 
+    print('Busca por algoritmo A*: sair de p e chegar em n')
+    state = Map('p', 0, 'p', 'n')
+    algorithm = AEstrela()
+    ts = time.time()
+    result = algorithm.search(state)
+    tf = time.time()
+    if result != None:
+        print(result.show_path())
+    else:
+        print('Nao achou solucao')
+    print('Tempo de processamento em segundos: ' + str(tf-ts))
+    print('O custo da solucao eh: '+str(result.g))
+    print('')
+    
+
 if __name__ == '__main__':
     main()
