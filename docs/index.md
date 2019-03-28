@@ -7,4 +7,5 @@ Nesta página estão disponibilizados alguns slides utilizados em disciplinas de
 3. Algoritmos de Busca:
   - [Descrição](busca_versaoFabricio.pdf)
   - [Exercícios](exerciciosBusca.pdf)
+  - [Projeto sobre algoritmos de busca](projeto1.pdf)
 4. [Algoritmos de Busca Competitiva](buscaCompetitiva.pdf)
