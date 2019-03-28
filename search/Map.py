@@ -37,7 +37,7 @@ class Map(State):
         sucessors = []
         neighbors = Map.area[self.city]
         for next_city in neighbors:
-            sucessors.append(Map(next_city[1], next_city[0], next_city[1], self.goal))
+            sucessors.append(Map(next_city[1], next_city[0] + self.cost_value, next_city[1], self.goal))
         return sucessors
     
     def is_goal(self):
@@ -60,41 +60,47 @@ class Map(State):
 
 
 def main():
-    print('Busca em profundidade iterativa: sair de h e chegar em o')
-    state = Map('h', 0, 'h', 'o')
-    algorithm = BuscaProfundidadeIterativa()
-    ts = time.time()
-    result = algorithm.search(state)
-    tf = time.time()
-    if result != None:
-        print(result.show_path())
-    else:
-        print('Nao achou solucao')
-    print('Tempo de processamento em segundos: ' + str(tf-ts))
+    # print('Busca em profundidade iterativa: sair de h e chegar em o')
+    # state = Map('h', 0, 'h', 'o')
+    # algorithm = BuscaProfundidadeIterativa()
+    # ts = time.time()
+    # result = algorithm.search(state)
+    # tf = time.time()
+    # if result != None:
+    #     print(result.show_path())
+    # else:
+    #     print('Nao achou solucao')
+    # print('Tempo de processamento em segundos: ' + str(tf-ts))
+    # print('O custo da solucao eh: '+str(result.state.cost()))
+    # print('')
 
-    print('Busca em profundidade iterativa: sair de i e chegar em x')
-    state = Map('i', 0, 'i', 'x')
-    algorithm = BuscaProfundidadeIterativa()
-    ts = time.time()
-    result = algorithm.search(state)
-    tf = time.time()
-    if result != None:
-        print(result.show_path())
-    else:
-        print('Nao achou solucao')
-    print('Tempo de processamento em segundos: ' + str(tf-ts))
+    # print('Busca em profundidade iterativa: sair de i e chegar em x')
+    # state = Map('i', 0, 'i', 'x')
+    # algorithm = BuscaProfundidadeIterativa()
+    # ts = time.time()
+    # result = algorithm.search(state)
+    # tf = time.time()
+    # if result != None:
+    #     print(result.show_path())
+    # else:
+    #     print('Nao achou solucao')
+    # print('Tempo de processamento em segundos: ' + str(tf-ts))
+    # print('O custo da solucao eh: '+str(result.state.cost()))
+    # print('')
 
-    print('Busca em de custo uniforme: sair de h e chegar em o')
-    state = Map('h', 0, 'h', 'o')
-    algorithm = BuscaCustoUniforme()
-    ts = time.time()
-    result = algorithm.search(state)
-    tf = time.time()
-    if result != None:
-        print(result.show_path())
-    else:
-        print('Nao achou solucao')
-    print('Tempo de processamento em segundos: ' + str(tf-ts))
+    # print('Busca em de custo uniforme: sair de h e chegar em o')
+    # state = Map('h', 0, 'h', 'o')
+    # algorithm = BuscaCustoUniforme()
+    # ts = time.time()
+    # result = algorithm.search(state)
+    # tf = time.time()
+    # if result != None:
+    #     print(result.show_path())
+    # else:
+    #     print('Nao achou solucao')
+    # print('Tempo de processamento em segundos: ' + str(tf-ts))
+    # print('O custo da solucao eh: '+str(result.state.cost()))
+    # print('')
 
     print('Busca de custo uniforme: sair de i e chegar em x')
     state = Map('i', 0, 'i', 'x')
@@ -107,43 +113,50 @@ def main():
     else:
         print('Nao achou solucao')
     print('Tempo de processamento em segundos: ' + str(tf-ts))
+    print('O custo da solucao eh: '+str(result.state.cost()))
+    print('')
 
-    print('Busca de custo uniforme: sair de p e chegar em n')
-    state = Map('p', 0, 'p', 'n')
-    algorithm = BuscaCustoUniforme()
-    ts = time.time()
-    result = algorithm.search(state)
-    tf = time.time()
-    if result != None:
-        print(result.show_path())
-    else:
-        print('Nao achou solucao')
-    print('Tempo de processamento em segundos: ' + str(tf-ts))
+    # print('Busca de custo uniforme: sair de p e chegar em n')
+    # state = Map('p', 0, 'p', 'n')
+    # algorithm = BuscaCustoUniforme()
+    # ts = time.time()
+    # result = algorithm.search(state)
+    # tf = time.time()
+    # if result != None:
+    #     print(result.show_path())
+    # else:
+    #     print('Nao achou solucao')
+    # print('Tempo de processamento em segundos: ' + str(tf-ts))
+    # print('O custo da solucao eh: '+str(result.state.cost()))
+    # print('')
+    
+    # print('Busca por algoritmo Ganancioso: sair de h e chegar em o')
+    # state = Map('h', 0, 'h', 'o')
+    # algorithm = BuscaGananciosa()
+    # ts = time.time()
+    # result = algorithm.search(state)
+    # tf = time.time()
+    # if result != None:
+    #     print(result.show_path())
+    # else:
+    #     print('Nao achou solucao')
+    # print('Tempo de processamento em segundos: ' + str(tf-ts))
+    # print('O custo da solucao eh: '+str(result.state.cost()))
+    # print('')
 
-    
-    print('Busca por algoritmo Ganancioso: sair de h e chegar em o')
-    state = Map('h', 0, 'h', 'o')
-    algorithm = BuscaGananciosa()
-    ts = time.time()
-    result = algorithm.search(state)
-    tf = time.time()
-    if result != None:
-        print(result.show_path())
-    else:
-        print('Nao achou solucao')
-    print('Tempo de processamento em segundos: ' + str(tf-ts))
-    
-    print('Busca por algoritmo A*: sair de h e chegar em o')
-    state = Map('h', 0, 'h', 'o')
-    algorithm = BuscaAStar()
-    ts = time.time()
-    result = algorithm.search(state)
-    tf = time.time()
-    if result != None:
-        print(result.show_path())
-    else:
-        print('Nao achou solucao')
-    print('Tempo de processamento em segundos: ' + str(tf-ts))
-    
+    # print('Busca por algoritmo A*: sair de h e chegar em o')
+    # state = Map('h', 0, 'h', 'o')
+    # algorithm = BuscaAStar()
+    # ts = time.time()
+    # result = algorithm.search(state)
+    # tf = time.time()
+    # if result != None:
+    #     print(result.show_path())
+    # else:
+    #     print('Nao achou solucao')
+    # print('Tempo de processamento em segundos: ' + str(tf-ts))
+    # print('O custo da solucao eh: '+str(result.state.cost()))
+    # print('')
+
 if __name__ == '__main__':
     main()
