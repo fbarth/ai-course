@@ -16,7 +16,7 @@ Além disso, esta página também tem algumas referências sobre o que é I.A., 
   - [Entrevista com o John McCarthy (1927-2011), um dos "pais" da I.A. 1989](https://www.youtube.com/watch?v=Ozipf13jRr4)
   - [Uma aula com Andrew Ng](https://www.youtube.com/watch?v=21EiKfQYZXc)
   - [Artificial Intelligence for the Real World. Thomas H. Davenport and Rajeev Ronanki. Harvard Business Review. Jan, 2018](https://hbr.org/2018/01/artificial-intelligence-for-the-real-world)
-  - [This is A.I. Part 1 - A documentary from Discovery](https://www.youtube.com/watch?v=H3P87qCdqk4)
+  - [This is AI (Part 1), a documentary from Discovery](https://www.youtube.com/watch?v=H3P87qCdqk4)
   - [O mundo mediado por algoritmos](http://revistapesquisa.fapesp.br/2018/04/19/o-mundo-mediado-por-algoritmos/)
   - [Discipline of Machine Learning](http://www.cs.cmu.edu/~tom/pubs/MachineLearning.pdf)
 
