@@ -22,7 +22,7 @@ Além disso, esta página também tem algumas referências sobre o que é I.A., 
 
 2. Como implementar projetos de I.A.
   - [A Voz da Arte - IBM Watson](https://www.youtube.com/watch?v=1rOAgvCnZpw)
-  - [Alguns detalhes técnicos e desafios do projeto a voz da arte](http://bit.ly/vozWatson)
+  - [Alguns detalhes técnicos e desafios do projeto "A Voz da Arte"](http://bit.ly/vozWatson)
   - [Cross-industry standard process for data mining](https://en.wikipedia.org/wiki/Cross-industry_standard_process_for_data_mining)
   - [AI Transformation Playbook](references/AI-Transformation-Playbook-v8.pdf)
 
