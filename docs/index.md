@@ -27,6 +27,8 @@ Além disso, esta página também tem algumas referências sobre o que é I.A., 
   - [AI Transformation Playbook](references/AI-Transformation-Playbook-v8.pdf)
 
 3. Quais os impactos da I.A.?
-  - 
+  - [The wonderful and terrifying implications of computers that can learn](https://www.ted.com/talks/jeremy_howard_the_wonderful_and_terrifying_implications_of_computers_that_can_learn)
+  - [The jobs we’ll lose to machines – and the ones we won’t](https://www.ted.com/talks/anthony_goldbloom_the_jobs_we_ll_lose_to_machines_and_the_ones_we_won_t)
+  - [The ethical dilemma of self-driving cars](https://www.youtube.com/watch?v=ixIoDYVfKA0)
   - 
   - 
