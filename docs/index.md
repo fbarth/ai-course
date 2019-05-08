@@ -30,5 +30,8 @@ Além disso, esta página também tem algumas referências sobre o que é I.A., 
   - [The wonderful and terrifying implications of computers that can learn](https://www.ted.com/talks/jeremy_howard_the_wonderful_and_terrifying_implications_of_computers_that_can_learn)
   - [The jobs we’ll lose to machines – and the ones we won’t](https://www.ted.com/talks/anthony_goldbloom_the_jobs_we_ll_lose_to_machines_and_the_ones_we_won_t)
   - [The ethical dilemma of self-driving cars](https://www.youtube.com/watch?v=ixIoDYVfKA0)
-  - 
-  - 
+  - [Artificial Intelligence and Machine Learning: Policy Paper](https://www.internetsociety.org/resources/doc/2017/artificial-intelligence-and-machine-learning-policy-paper/)
+  - [AI in the UK: ready, willing and able?](references/AI_in_UK.pdf)
+  - [Track how technology is transforming work](references/Nature2017_Mitchell_Brynjolfsson_FINAL.pdf)
+  - [Preparing for the Future of Artificial Intelligence](references/preparing_for_the_future_of_ai.pdf)
+  - [What can Machine Learning do? Workforce implications](references/Science_WorkforceDec2017.pdf)
