@@ -128,3 +128,7 @@ class AEstrela (SearchAlgorithm):
                 new_n = Node(i,n)
                 open.append((new_n,new_n.f()))
         return None
+
+#
+# TODO Implement hill-climing search algorithms
+#
