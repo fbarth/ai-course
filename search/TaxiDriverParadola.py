@@ -2,8 +2,10 @@ from SearchAlgorithms import AEstrela
 from Graph import State
 
 class TaxiDriver(State):
+    # Team paradola:
     # Igor Ehlert - 11710374
     # Vinícius Gomes - 11710390
+
 
     # passenger = [15,2]
     # destination = [19,19]
