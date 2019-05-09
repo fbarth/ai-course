@@ -3,34 +3,62 @@ from Graph import State
 
 class TaxiDriver(State):
 
-    def __init__(self, op, maze, taxiPosition, passengerPosition, goalPosition, hasPassenger):
+    #Pedro GMR Basso 11529904
+
+    originPosition = [0,0]
+    passengerPosition = [2,4]
+    destinationPosition = [0,0]
+    maze = [[ 0, 0, 0, 1, 0, 0, 0, 1, 0, 0],
+            [ 0, 0, 0, 1, 0, 1, 0, 1, 0, 0],
+            [ 0, 0, 0, 1, 0, 1, 0, 1, 0, 0],
+            [ 0, 0, 0, 1, 0, 1, 0, 0, 0, 0],
+            [ 0, 0, 0, 1, 1, 1, 1, 1, 0, 0],
+            [ 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+            [ 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+            [ 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+            [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+
+    def __init__(self, op, taxiPosition, hasPassenger):
         self.operator = op
-        self.maze = maze
         self.taxiPosition = taxiPosition
-        self.passengerPosition = passengerPosition
-        self.goalPosition = goalPosition
         self.hasPassenger = hasPassenger
+        self.origin_position = taxiPosition
     
+    #Check if the next desirable position isn't a barrier
+    def isPositionPossible (self, taxiPosition):
+        return (self.maze[taxiPosition[0]][taxiPosition[1]] == 0)
+
     def sucessors(self):
         sucessors = []
-        #TODO: Implementar barreira
-        print(str(self.taxiPosition[0]) + ',' + str(self.taxiPosition[1]) + ' ' + str(self.hasPassenger))
+
+        #Go UP
+        if((self.taxiPosition[0] - 1 >= 0) and (self.isPositionPossible([self.taxiPosition[0] - 1, self.taxiPosition[1]]))):
+            sucessors.append(TaxiDriver('Go Up', [self.taxiPosition[0] - 1, self.taxiPosition[1]], self.hasPassenger))
+
+        #Go DOWN
+        if((self.taxiPosition[0] + 1 < len(self.maze)) and (self.isPositionPossible([self.taxiPosition[0] + 1, self.taxiPosition[1]]))):
+            sucessors.append(TaxiDriver('Go Down', [self.taxiPosition[0] + 1, self.taxiPosition[1]], self.hasPassenger))
+
+        #Go LEFT
+        if((self.taxiPosition[1] - 1 >= 0) and (self.isPositionPossible([self.taxiPosition[0], self.taxiPosition[1] - 1]))):
+            sucessors.append(TaxiDriver('Go Left', [self.taxiPosition[0], self.taxiPosition[1] - 1], self.hasPassenger))
+        
+        #Go RIGHT
+        if((self.taxiPosition[1] + 1 < len(self.maze[0])) and (self.isPositionPossible([self.taxiPosition[0], self.taxiPosition[1] + 1]))):
+            sucessors.append(TaxiDriver('Go Right', [self.taxiPosition[0], self.taxiPosition[1] + 1], self.hasPassenger))
+
+        #Pick up passenger
         if((not self.hasPassenger) and (self.taxiPosition == self.passengerPosition)):
-            print("vai pegar o passageiro")
-            sucessors.append(TaxiDriver('Pegar Passageiro', self.maze, self.taxiPosition, None, self.goalPosition, True))
-        if((self.taxiPosition[0] - 1 >= 0) and (self.maze[self.taxiPosition[0]][self.taxiPosition[1]] != 'B')):
-            sucessors.append(TaxiDriver('Subir', self.maze, [self.taxiPosition[0] - 1, self.taxiPosition[1]], self.passengerPosition, self.goalPosition, self.hasPassenger))
-        if((self.taxiPosition[1] - 1 >= 0) and (self.maze[self.taxiPosition[0]][self.taxiPosition[1]] != 'B')):
-            sucessors.append(TaxiDriver('Esquerda', self.maze, [self.taxiPosition[0], self.taxiPosition[1] - 1], self.passengerPosition, self.goalPosition, self.hasPassenger))
-        if((self.taxiPosition[0] + 1 < len(self.maze)) and (self.maze[self.taxiPosition[0]][self.taxiPosition[1]] != 'B')):
-            sucessors.append(TaxiDriver('Descer', self.maze, [self.taxiPosition[0] + 1, self.taxiPosition[1]], self.passengerPosition, self.goalPosition, self.hasPassenger))
-        if((self.taxiPosition[1] + 1 < len(self.maze[0])) and (self.maze[self.taxiPosition[0]][self.taxiPosition[1]] != 'B')):
-            sucessors.append(TaxiDriver('Direita', self.maze, [self.taxiPosition[0], self.taxiPosition[1] + 1], self.passengerPosition, self.goalPosition, self.hasPassenger))
+            sucessors.append(TaxiDriver('Pick Up', self.taxiPosition, True))
 
         return sucessors
     
+    def env(self):
+        return str(self.operator)+str(self.taxiPosition)+str(self.hasPassenger)
+    
     def is_goal(self):
-        return ((self.taxiPosition == self.goalPosition) and (self.hasPassenger))
+        return ((self.taxiPosition == self.destinationPosition) and (self.hasPassenger))
     
     def description(self):
         return "Taxi Driver"
@@ -43,37 +71,24 @@ class TaxiDriver(State):
 
     def h(self):
         if(not self.hasPassenger):
-            return abs((self.taxiPosition[0] - self.passengerPosition[0]) + (self.taxiPosition[1] - self.passengerPosition[1])) + 10
+            return abs(self.taxiPosition[0] - self.passengerPosition[0]) + abs(self.taxiPosition[1] - self.passengerPosition[1]) + 10*len(self.maze)
         else:
-            return abs((self.taxiPosition[0] - self.goalPosition[0]) + (self.taxiPosition[1] - self.goalPosition[1]))
+            return abs(self.taxiPosition[0] - self.destinationPosition[0]) + abs(self.taxiPosition[1] - self.destinationPosition[1])
 
 
 
 def main():
-    print('Busca A *')
+    print('A* Algorithm')
+    taxi = [1,0]
 
-    maze = [[" "," "," "," "," "," "," "," "," "," "],
-            [" "," "," ","B"," "," "," "," "," "," "],
-            [" "," "," ","B"," "," "," "," "," "," "],
-            [" "," "," ","B"," "," "," "," "," "," "],
-            [" "," "," ","B"," "," "," "," "," "," "],
-            [" "," "," ","B"," "," "," "," "," "," "],
-            [" "," "," ","B"," "," "," "," "," "," "],
-            [" "," "," ","B"," "," "," "," "," "," "],
-            [" "," "," ","B"," "," "," "," "," "," "],
-            [" "," "," ","B"," "," "," "," "," "," "]]
-
-    taxi = [0,0]
-    passenger = [7,8]
-    goal = [4,2]
-    state = TaxiDriver('', maze, taxi, passenger, goal, False)
+    state = TaxiDriver('Start', taxi, False)
     algorithm = AEstrela()
     result = algorithm.search(state)
     if result != None:
-        print('Achou!')
-        print(result.show_path() + ', deixar o passageiro')
+        print('Solution Found!')
+        print(result.show_path() + ' ; Drop Passenger')
     else:
-        print('Nao achou solucao')
+        print('No Solution =(')
 
 if __name__ == '__main__':
     main()
