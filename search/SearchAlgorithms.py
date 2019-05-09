@@ -122,9 +122,14 @@ class AEstrela (SearchAlgorithm):
             #list sorted by f()
             open.sort(key = sortFunction, reverse = True)
             n = open.pop()[0]
+            print(n.state.printEnv())
             if (n.state.is_goal()):
                 return n
             for i in n.state.sucessors():
                 new_n = Node(i,n)
                 open.append((new_n,new_n.f()))
         return None
+
+#
+# TODO Implement hill-climing search algorithms
+#

@@ -50,3 +50,7 @@ class State(ABC):
     @abstractmethod
     def print(self):
         pass
+
+    @abstractmethod
+    def printEnv(self):
+        pass
