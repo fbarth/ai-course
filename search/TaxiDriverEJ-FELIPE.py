@@ -1,89 +1,78 @@
 from SearchAlgorithms import AEstrela
 from Graph import State
 
+
 class TaxiDriver(State):
 
-    def __init__(self, taxi, matrix, where, customer,took, blocks, drop, op):
-        self.matrix = matrix
-        self.operator = op
+    # where = [2,5]
+    # customer = [5,4]
+    # blocks = [[0,1], [1,4], [2,4],[3,4],[4,4]]
+    # size = 100
+
+    where = [3,0]
+    customer = [1,0]
+    blocks = [[2,0], [1,1], [1,2], [1,3], [3,1]]
+    size = 10
+
+    def __init__(self, taxi, onBoard, op):
         self.taxi = taxi
-        self.where = where
-        self.customer = customer
-        self.took = took
-        self.blocks = blocks
-        self.drop = drop
+        self.onBoard = onBoard
+        self.operator = op
 
     def printEnv(self):
-        return str(self.took)+"   "+str(self.taxi) #self.customer
+        return "onBoard: " + str(self.onBoard) + " ->  Position taxi: " + str(self.taxi) + " -> target: " + str(self.taxi == self.where)  # self.customer
 
     def sucessors(self):
         sucessors = []
 
-        if (self.took == False and self.taxi_can_go(self.taxi[0], self.taxi[1], self.blocks)): 
-            if (self.taxi[0] - 1 >= 0):
-                sucessors.append(TaxiDriver([self.taxi[0]-1, self.taxi[1]], self.matrix, self.where, self.customer,False, self.blocks, False, 'up'))
-            
-            if (self.taxi[0]+1 < len(self.matrix) and self.taxi[0]+1 > 0):
-                sucessors.append(TaxiDriver([self.taxi[0]+1, self.taxi[1]], self.matrix, self.where, self.customer, False, self.blocks, False,'down'))
+        if (self.taxi[0] - 1 >= 0 and self.taxiCanGo(self.taxi[0] - 1, self.taxi[1])):
+            sucessors.append(TaxiDriver([self.taxi[0] - 1, self.taxi[1]], self.onBoard, 'up'))
 
-            if (self.taxi[1]-1 >= 0):
-                sucessors.append(TaxiDriver([self.taxi[0], self.taxi[1] - 1], self.matrix, self.where,self.customer, False, self.blocks,False, 'left'))
-            
-            if (self.taxi[1]+1 < len(self.matrix[0]) and self.taxi[1] + 1 > 0):
-                sucessors.append(TaxiDriver([self.taxi[0], self.taxi[1]+1], self.matrix, self.where, self.customer,False, self.blocks, False,'right'))
+        if (self.taxi[0] + 1 >= 0 and self.taxiCanGo(self.taxi[0] + 1, self.taxi[1])):
+            sucessors.append(TaxiDriver([self.taxi[0] + 1, self.taxi[1]], self.onBoard, 'down'))
 
-            if(self.taxi == self.customer):
-                sucessors.append(TaxiDriver(self.taxi, self.matrix, self.where, self.customer, True, self.blocks, False, 'take customer'))
+        if (self.taxi[1] - 1 >= 0 and self.taxiCanGo(self.taxi[0], self.taxi[1]-1)):
+            sucessors.append(TaxiDriver([self.taxi[0], self.taxi[1] - 1], self.onBoard, 'left'))
 
-        if (self.took == True and self.taxi_can_go(self.taxi[0], self.taxi[1], self.blocks)):
-            if (self.taxi[0] - 1 >= 0):
-                sucessors.append(TaxiDriver([self.taxi[0]-1, self.taxi[1]], self.matrix, self.where, [self.customer[0]-1, self.customer[1]], True, self.blocks,False, 'up'))
-            
-            if (self.taxi[0] + 1 < len(self.matrix) and self.taxi[0] + 1 > 0):
-                sucessors.append(TaxiDriver([self.taxi[0]+1, self.taxi[1]], self.matrix, self.where, [self.customer[0]+1, self.customer[1]], True, self.blocks, False,'down'))
+        if (self.taxi[1] + 1 >= 0 and self.taxiCanGo(self.taxi[0], self.taxi[1] + 1)):
+            sucessors.append(TaxiDriver([self.taxi[0], self.taxi[1] + 1], self.onBoard, 'right'))
 
-            if (self.taxi[1] - 1 >= 0):
-                sucessors.append(TaxiDriver([self.taxi[0], self.taxi[1] - 1], self.matrix, self.where, [self.customer[0], self.customer[1] - 1] , True, self.blocks, False,'left'))
-            
-            if (self.taxi[1] + 1 < len(self.matrix[0]) and self.taxi[1] + 1 > 0):
-                sucessors.append(TaxiDriver([self.taxi[0], self.taxi[1] + 1], self.matrix, self.where, [self.customer[0], self.customer[1] + 1], True, self.blocks, False,'right'))
-        
-        if(self.took == True and self.taxi == self.where):
-            sucessors.append(TaxiDriver(self.taxi, self.matrix, self.where, self.customer, True, self.blocks, True, 'drop customer'))
-        
+        if(self.taxi == self.customer and (not self.onBoard)):
+            sucessors.append(TaxiDriver(self.taxi, True, 'take customer'))
+
         return sucessors
-    
+
     def is_goal(self):
-        return self.drop == True and self.customer == self.where
-    
+        return self.onBoard and (self.taxi == self.where)
+
     def description(self):
         return "Describe the problem"
-    
+
     def cost(self):
-        return abs(self.taxi[0]- self.where[0]) + abs(self.taxi[1] - self.where[1])
-        
+        return 1
+
     def print(self):
         return str(self.operator)
 
     def h(self):
-        if (self.took):
-            return abs(self.taxi[0] - self.customer[0]) + abs(self.taxi[1] - self.customer[1]) 
+        if (self.onBoard):
+            return abs(self.taxi[0] - self.where[0]) + abs(self.taxi[1] - self.where[1])
         else:
-            return abs(self.taxi[0] - self.where[0]) + abs(self.taxi[1] - self.where[1]) + 100
-    
-    def taxi_can_go(self, x, y, obs):
-        for i in obs:
-            if (x == i[0] and y == i[1]):
+            return (abs(self.taxi[0] - self.customer[0]) + abs(self.taxi[1] - self.customer[1])) + self.size * 10
+
+    def taxiCanGo(self, x, y):
+        for block in self.blocks:
+            if (x == block[0] and y == block[1]):
                 return False
-        
         return True
+
 
 def main():
     print('Busca A*')
-    #matrix = [[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]]
-    matrix = [[0 for col in range(6)] for row in range(6)]
-    #state = TaxiDriver([0,0], matrix, [1,2], [1,1], False, [[0,1], [1,1], [2,1]], False, '')
-    state = TaxiDriver([5,0], matrix, [5,5], [2,3], False, [[1,2],[2,2],[3,2],[4,2],[5,2],[1,3]], False, '')
+
+    taxi = [0, 0]
+    state = TaxiDriver(taxi, False, '')
+
     algorithm = AEstrela()
     result = algorithm.search(state)
     if result != None:
@@ -91,6 +80,7 @@ def main():
         print(result.show_path())
     else:
         print('Nao achou solucao')
+
 
 if __name__ == '__main__':
     main()
