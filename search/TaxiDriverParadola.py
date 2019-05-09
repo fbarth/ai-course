@@ -1,38 +1,53 @@
-from SearchAlgorithms import BuscaProfundidadeIterativa
+from SearchAlgorithms import AEstrela
 from Graph import State
 
 class TaxiDriver(State):
+    # Team paradola:
+    # Igor Ehlert - 11710374
+    # Vinícius Gomes - 11710390
 
-    def __init__(self, taxiPosition, passengerPosition, destination, onboard, rowLen, colLen, op):
+
+    # passenger = [15,2]
+    # destination = [19,19]
+    # size = 20
+    # blocks = [[1,1],[2,0]]
+
+    passenger = [3,2]
+    destination = [0,0]
+    size = 4
+    blocks = [[1,1],[2,1],[3,1],[1,2],[1,2],[2,2]]
+
+    def __init__(self, taxi, onboard, op):
         self.operator = op
-        self.taxiPosition = taxiPosition
-        self.passengerPosition = passengerPosition
-        self.destination = destination
+        self.taxi = taxi
         self.onboard = onboard
-        self.rowLen = rowLen
-        self.colLen = colLen
+
+    def env(self):
+        # isto aqui estah errado
+        return 'Comando' #self.customer
     
     def sucessors(self):
         sucessors = []
-        #print(self.taxiPosition)
-        if(self.taxiPosition == self.destination and self.onboard == True):
-            sucessors.append(TaxiDriver(self.taxiPosition, self.passengerPosition, self.destination, self.onboard, self.rowLen, self.colLen, 'Chegou ao seu destino'))
-        else:
-            if(self.taxiPosition[1]-1 >= 0):
-                sucessors.append(TaxiDriver([self.taxiPosition[0], self.taxiPosition[1]-1], self.passengerPosition, self.destination, self.onboard, self.rowLen, self.colLen, 'Move Left'))
-            if(self.taxiPosition[1]+1 < self.colLen):
-                sucessors.append(TaxiDriver([self.taxiPosition[0], self.taxiPosition[1]+1], self.passengerPosition, self.destination, self.onboard, self.rowLen, self.colLen, 'Move Right'))
-            if(self.taxiPosition[0]-1 >= 0):
-                sucessors.append(TaxiDriver([self.taxiPosition[0]-1, self.taxiPosition[1]], self.passengerPosition, self.destination, self.onboard, self.rowLen, self.colLen, 'Move Up'))
-            if(self.taxiPosition[0]+1 < self.rowLen):
-                sucessors.append(TaxiDriver([self.taxiPosition[0]+1, self.taxiPosition[1]], self.passengerPosition, self.destination, self.onboard, self.rowLen, self.colLen, 'Move Down'))
-            if(self.taxiPosition == self.passengerPosition):
-                sucessors.append(TaxiDriver(self.taxiPosition, self.passengerPosition, self.destination, True, self.rowLen, self.colLen, 'Embarcou'))
+        #print(self.taxi)
+        if(self.taxi[1]-1 >= 0 and self.isblocked(self.taxi[0], self.taxi[1]-1)):
+            sucessors.append(TaxiDriver([self.taxi[0], self.taxi[1]-1], self.onboard,  'Move Left'))
+            
+        if(self.taxi[1]+1 < self.size and self.isblocked(self.taxi[0], self.taxi[1]+1)):
+            sucessors.append(TaxiDriver([self.taxi[0], self.taxi[1]+1], self.onboard,  'Move Right'))
+
+        if(self.taxi[0]-1 >= 0 and self.isblocked(self.taxi[0]-1, self.taxi[1])):
+            sucessors.append(TaxiDriver([self.taxi[0]-1, self.taxi[1]], self.onboard,  'Move Up'))
+
+        if(self.taxi[0]+1 < self.size and self.isblocked(self.taxi[0]+1, self.taxi[1])):
+            sucessors.append(TaxiDriver([self.taxi[0]+1, self.taxi[1]], self.onboard,  'Move Down'))
+            
+        if(self.onboard == False and self.taxi == self.passenger):
+            sucessors.append(TaxiDriver(self.taxi,  True,  'Embarcou'))
     
         return sucessors
     
     def is_goal(self):
-        return (self.taxiPosition == self.destination and self.onboard == True)
+        return (self.taxi == self.destination) and self.onboard == True
     
     def description(self):
         return "Describe the problem"
@@ -44,17 +59,29 @@ class TaxiDriver(State):
         return str(self.operator)
 
     def h(self):
-        pass
+        if (self.onboard):
+            return abs(self.taxi[0] - self.destination[0]) + abs(self.taxi[1] - self.destination[1])
+        else:
+            return (abs(self.taxi[0] - self.passenger[0]) + abs(self.taxi[1] - self.passenger[1])) + self.size * 10
+
+    def isblocked(self, row, col):
+        for block in self.blocks:
+            if (row == block[0] and col == block[1]):
+                return False
+        
+        return True
+
 
 
 def main():
-    print('Busca em profundidade iterativa')
-    state = TaxiDriver([0,0], [2,3], [1,1], False, 3, 4, '')
-    algorithm = BuscaProfundidadeIterativa()
+    print('Busca A*')
+    state = TaxiDriver([3,0], False, '')
+    algorithm = AEstrela()
     result = algorithm.search(state)
     if result != None:
         print('Achou!')
         print(result.show_path())
+        print('Desembarcou')
     else:
         print('Nao achou solucao')
 

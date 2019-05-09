@@ -123,6 +123,7 @@ class AEstrela (SearchAlgorithm):
             #list sorted by f()
             open.sort(key = sortFunction, reverse = True)
             n = open.pop()[0]
+            print(n.state.printEnv())
             if (n.state.is_goal()):
                 return n
             for i in n.state.sucessors():
