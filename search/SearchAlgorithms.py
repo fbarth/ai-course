@@ -115,6 +115,7 @@ class BuscaGananciosa (SearchAlgorithm):
 class AEstrela (SearchAlgorithm):
 
     def search (self, initialState):
+        states = []
         open = []
         new_n = Node(initialState, None)
         open.append((new_n, new_n.f()))
@@ -126,7 +127,12 @@ class AEstrela (SearchAlgorithm):
                 return n
             for i in n.state.sucessors():
                 new_n = Node(i,n)
-                open.append((new_n,new_n.f()))
+                if (new_n.state.env() not in states):
+                    open.append((new_n,new_n.f()))
+                    states.append(new_n.state.env())
+                    print(len(states))
+                else: 
+                    print('nao entrou')
         return None
 
 #
