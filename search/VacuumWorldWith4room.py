@@ -119,15 +119,15 @@ def main():
     # #
     # # Executando busca em profundidade iterativa
     # #
-    # print('Busca em profundidade iterativa')
-    # state = VacuumWorld('top', 'left', False, False, False, False, '')
-    # algorithm = BuscaProfundidadeIterativa()
-    # result = algorithm.search(state)
-    # if result != None:
-    #     print('Achou!')
-    #     print(result.show_path())
-    # else:
-    #     print('Nao achou solucao')
+    print('Busca em profundidade iterativa')
+    state = VacuumWorld('top', 'left', False, False, False, False, '')
+    algorithm = BuscaProfundidadeIterativa()
+    result = algorithm.search(state)
+    if result != None:
+        print('Achou!')
+        print(result.show_path())
+    else:
+        print('Nao achou solucao')
 
     # #
     # # Executando busca de custo uniforme
