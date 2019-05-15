@@ -21,7 +21,7 @@ class TaxiDriver(State):
         self.onBoard = onBoard
         self.operator = op
 
-    def printEnv(self):
+    def env(self):
         return "onBoard: " + str(self.onBoard) + " ->  Position taxi: " + str(self.taxi) + " -> target: " + str(self.taxi == self.where)  # self.customer
 
     def sucessors(self):
