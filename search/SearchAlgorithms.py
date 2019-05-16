@@ -13,6 +13,7 @@ def sortFunction(val):
 # 4) Uniform cost search (CustoUniforme)
 # 5) Greddy search algorithm (BuscaGananciosa)
 # 6) A* search algorithm (AEstrela)
+# 7) hill-climing search algorithms
 #
 
 class SearchAlgorithm:

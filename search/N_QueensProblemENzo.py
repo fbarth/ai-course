@@ -1,9 +1,3 @@
-<<<<<<< Updated upstream
-#
-# TODO implement a solution for N-queens problem, where N could 
-# be any number between 4 and 10.
-#
-=======
 from SearchAlgorithms import AEstrela
 from Graph import State
 
@@ -91,4 +85,3 @@ def main():
 if __name__ == '__main__':
     main()
 	
->>>>>>> Stashed changes
