@@ -97,7 +97,6 @@ class BuscaGananciosa (SearchAlgorithm):
     def search (self, initialState):
         open = []
         new_n = Node(initialState, None)
-        print(new_n.h())
         open.append((new_n, new_n.h()))
         while (len(open) > 0):
             #list sorted by h()
@@ -138,5 +137,24 @@ class AEstrela (SearchAlgorithm):
         return None
 
 #
-# TODO Implement hill-climing search algorithms
+# Implement hill-climing search algorithms
 #
+class SubidaMontanha (SearchAlgorithm):
+
+    def best(self, successors):
+        best_state = successors[0]
+        for i in successors:
+            if i.h() < best_state.h():
+                best_state = i
+        return best_state
+
+    def search (self, initialState):
+        atual = initialState
+        while True:
+            prox = self.best(atual.sucessors())
+            if prox.h() >= atual.h():
+                return atual
+            atual = prox
+
+
+
