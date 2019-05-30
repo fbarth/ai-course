@@ -143,23 +143,22 @@ class AEstrela (SearchAlgorithm):
 
 class SubidaMontanhaEJ_FELIPE (SearchAlgorithm):
 
-      def best(self, successors):
-          best_state = successors[0]
-          for i in successors:
-              if i.h() < best_state.h():
-                  best_state = i
-          return best_state
-
-      def search (self, initialState):
-          current = initialState # pega o estado inicial
-
-          while True:
+    def best(self, successors):
+        best_state = successors[0]
+        for i in successors:
+            if i.h() < best_state.h():
+                best_state = i
+        return best_state
+        
+    def search (self, initialState):
+        current = initialState
+        
+        while True:
             next_state = self.best(current.sucessors())
-            if next_state.h() >= current.h():  # comparacao
-                return current # retorna estado atual caso, seja menor que o próximo
-          current = next_state # atual recebe o proximo
-# Implement hill-climing search algorithms
-#
+            if next_state.h() >= current.h():
+                return current 
+            current = next_state 
+
 class SubidaMontanha (SearchAlgorithm):
 
     def best(self, successors):
