@@ -7,7 +7,7 @@ from SearchAlgorithms import SubidaMontanha
 from Graph import State
 from random import randrange
 
-class N_QueensProblem(State):
+class TestHillCliming(State):
 
     def __init__(self, v):
         self.value = v
@@ -16,7 +16,7 @@ class N_QueensProblem(State):
         sucessors = []
         for i in range(1,5):
             v = self.value - randrange(0,3)
-            sucessors.append(N_QueensProblem(v))
+            sucessors.append(TestHillCliming(v))
         return sucessors
     
     def is_goal(self):
@@ -40,7 +40,7 @@ class N_QueensProblem(State):
 
 def main():
     print('Busca em profundidade iterativa')
-    state = N_QueensProblem(100)
+    state = TestHillCliming(100)
     algorithm = SubidaMontanha()
     result = algorithm.search(state)
     if result != None:

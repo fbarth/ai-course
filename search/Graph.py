@@ -28,20 +28,6 @@ class Node:
     def f(self):
         #f(n) = g(n) + h(n)
         return self.g + self.h()
-
-    def nearStates(self, state): # peguei do github
-        near_states = []
-        # Para cada state[coluna] verfica se as colunas vizinhas estao vazias
-        for row in range(self.N):
-            for col in range(self.N):
-                # Se for diferente:
-                #   entao a col atual da iteracao esta disponivel para movimentar-se
-                #   visto que o state[] guarda o valor das colunas em que estao as rainhas
-                if col != state[row]:
-                    aux = list(state)
-                    aux[row] = col  # Troca a coluna para a vazia
-                    near_states.append(list(aux))  # E inclui na lista de nearStates
-        return near_states
     
     def best_nextState(self, neighbours):
         best = neighbours[0]
