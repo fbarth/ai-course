@@ -136,12 +136,6 @@ class AEstrela (SearchAlgorithm):
                     print('nao entrou')
         return None
 
-#
-<<<<<<< HEAD
-# TODO Implement hill-climing search algorithms
-#
-
-
 class SubidaMontanhaEJ_FELIPE (SearchAlgorithm):
 
     def best(self, successors):
@@ -160,10 +154,6 @@ class SubidaMontanhaEJ_FELIPE (SearchAlgorithm):
                 return current 
             current = next_state 
 
-=======
-# Implement hill-climing search algorithms
-#
->>>>>>> 90566ab1f3339b17e7c9e79d400e05b0e05f7090
 class SubidaMontanha (SearchAlgorithm):
 
     def best(self, successors):
