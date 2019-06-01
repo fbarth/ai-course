@@ -5,6 +5,8 @@
 
 from SearchAlgorithms import SubidaMontanhaEJ_FELIPE
 from Graph import State
+from random import choice
+from collections import Counter
 from random import randrange
 
 
@@ -49,7 +51,7 @@ class N_QueensProblemEJ(State):
 def main():
     print('Subida na montanha')
 
-    state = N_QueensProblemEJ(100)
+    state = N_QueensProblemEJ(4)
     algorithm = SubidaMontanhaEJ_FELIPE()
     result = algorithm.search(state)
     

@@ -140,6 +140,7 @@ class SubidaMontanhaEJ_FELIPE (SearchAlgorithm):
 
     def best(self, successors):
         best_state = successors[0]
+
         for i in successors:
             if i.h() < best_state.h():
                 best_state = i
