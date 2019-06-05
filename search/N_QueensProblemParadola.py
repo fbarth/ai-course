@@ -5,8 +5,13 @@
 
 from SearchAlgorithms import SubidaMontanha
 from Graph import State
+from random import choice
 from random import randrange
 from collections import Counter
+
+    # Team paradola:
+    # Igor Ehlert - 11710374
+    # Vinícius Gomes - 11710390
 
 class N_QueensProblem(State):
 
@@ -16,13 +21,12 @@ class N_QueensProblem(State):
     def sucessors(self):
         sucessors = []
         for i in range(1,5):
-            print(self.value)
-            v = self.value - randrange(0,3)
-            sucessors.append(N_QueensProblem(v))
+            c = self.value - randrange(0,3)
+            sucessors.append(N_QueensProblem(c))
         return sucessors
     
     def is_goal(self):
-        pass
+        return 1
     
     def description(self):
         return "Describe the problem"
@@ -34,7 +38,7 @@ class N_QueensProblem(State):
         pass
 
     def printEnv(self):
-        return self.value
+        return "N: " + str(self.value)
     
     def h(self):
         # verificar se possui alguma rainha na coluna, na linha ou nas diagonais 
@@ -44,7 +48,7 @@ class N_QueensProblem(State):
 def main():
     print('Subidamontanha')
 
-    state = N_QueensProblem(4)
+    state = N_QueensProblem(16)
     algorithm = SubidaMontanha()
     result = algorithm.search(state)
     
