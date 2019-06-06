@@ -147,13 +147,13 @@ class SubidaMontanhaEJ_FELIPE (SearchAlgorithm):
         return best_state
         
     def search (self, initialState):
-        current = initialState
+        currentState = initialState
         
         while True:
-            next_state = self.best(current.sucessors())
-            if next_state.h() >= current.h():
-                return current 
-            current = next_state 
+            nextState = self.best(currentState.sucessors())
+            if nextState.h() >= currentState.h():
+                return currentState 
+            currentState = nextState 
 
 class SubidaMontanha (SearchAlgorithm):
 
@@ -172,5 +172,21 @@ class SubidaMontanha (SearchAlgorithm):
                 return atual
             atual = prox
 
+class SubidaMontanhaPGB (SearchAlgorithm):
+
+    def search (self, initialState):
+        currentState = initialState
+        while True:
+            nextState = self.best_next(currentState.sucessors())
+            if nextState.h() >= currentState.h():
+                return currentState
+            currentState = nextState
+
+    def best_next(self, successors):
+        best_state = successors[0]
+        for i in successors:
+            if i.h() < best_state.h():
+                best_state = i
+        return best_state
 
 
