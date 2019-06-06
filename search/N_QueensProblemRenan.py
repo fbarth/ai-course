@@ -12,7 +12,7 @@ from random import randrange
 
 class N_QueensProblemRenan(State):
 
-    # Renan 11710867
+    # Renan miguel 11710867
 
     def __init__(self, v):
         self.value = v
