@@ -172,6 +172,28 @@ class SubidaMontanha (SearchAlgorithm):
                 return atual
             atual = prox
 
+class SubidaMontanha2 (SearchAlgorithm):
+
+    def best(self, successors):
+        best_state = successors[0]
+        for i in successors:
+            if i.h() < best_state.h():
+                best_state = i
+        return best_state
+
+    def search (self, initialState):
+        atual = initialState
+        while True:
+            prox = self.best(atual.sucessors())
+            if prox.h() >= atual.h():
+                if atual.is_goal():
+                    return atual
+                else: 
+                    atual.randomBoard()
+            else:
+                atual = prox
+
+
 class SubidaMontanhaPGB (SearchAlgorithm):
 
     def search (self, initialState):

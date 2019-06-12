@@ -38,7 +38,7 @@ class TestHillCliming(State):
 
 
 def main():
-    print('Busca em profundidade iterativa')
+    print('Busca Subida da Montanha')
     state = TestHillCliming(100)
     algorithm = SubidaMontanha()
     result = algorithm.search(state)
