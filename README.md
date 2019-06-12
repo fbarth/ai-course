@@ -7,4 +7,4 @@ I am using this project to support the exercises in an Artificial Intelligence c
 3.	Solving Problems by Searching;
 4.	Informed Search Methods;
 5.	Game Playing, and;
-6.	Reinforcement Learning (I present the concept of Learning from Observations, Supervised Learning and Unsupervised Learning. However, I have a specific course to discuss those topics. You can access this material [here](https://github.com/fbarth/ml-espm)).
+6.	Reinforcement Learning (I present in this course the concept of Learning from Observations, Supervised Learning and Unsupervised Learning. However, I have a specific course to discuss those topics. You can access this material [here](https://github.com/fbarth/ml-espm)).
