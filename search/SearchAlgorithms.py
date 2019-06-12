@@ -189,4 +189,21 @@ class SubidaMontanhaPGB (SearchAlgorithm):
                 best_state = i
         return best_state
 
+class SubidaMontanhaEnzo (SearchAlgorithm):
 
+    def search (self, initialState):
+        current = initialState
+        while True:
+            nextState = self.best(current.sucessors())
+            if nextState.h() >= current.h():
+                return current
+            if nextState.is_goal():
+                return nextState
+            current = nextState
+
+    def best(self, successors):
+        best_state = successors[0]
+        for i in successors:
+            if i.h() < best_state.h():
+                best_state = i
+        return best_state
