@@ -16,7 +16,7 @@ from Graph import State
 
 class PlusOneTwo(State):
 
-    Goal = 100
+    Goal = 10
 
     def __init__(self, number, op):
         self.number = number
@@ -50,18 +50,18 @@ class PlusOneTwo(State):
 
 def main():
     
-    # #
-    # # Executando busca em largura
-    # #
-    # print('Busca em largura')
-    # state = PlusOneTwo(1, '')
-    # algorithm = BuscaLargura()
-    # result = algorithm.search(state)
-    # if result != None:
-    #     print('Achou!')
-    #     print(result.show_path())
-    # else:
-    #     print('Nao achou solucao')
+     #
+     # Executando busca em largura
+     #
+     print('Busca em largura')
+     state = PlusOneTwo(1, '')
+     algorithm = BuscaLargura()
+     result = algorithm.search(state)
+     if result != None:
+         print('Achou!')
+         print(result.show_path())
+     else:
+         print('Nao achou solucao')
     
     # #
     # # Executando busca em profundidade
@@ -115,20 +115,19 @@ def main():
     # else:
     #     print('Nao achou solucao')
 
-    #
-    # Executando busca A*
-    #
-    print('Busca A*')
-    state = PlusOneTwo(1, '')
-    algorithm = AEstrela()
-    result = algorithm.search(state)
-    if result != None:
-        print('Achou!')
-        print(result.show_path())
-    else:
-        print('Nao achou solucao')
+    ##
+    ## Executando busca A*
+    ##
+    #print('Busca A*')
+    #state = PlusOneTwo(1, '')
+    #algorithm = AEstrela()
+    #result = algorithm.search(state)
+    #if result != None:
+    #    print('Achou!')
+    #    print(result.show_path())
+    #else:
+    #    print('Nao achou solucao')
         
 
 if __name__ == '__main__':
     main()
-    
