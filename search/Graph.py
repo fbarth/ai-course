@@ -61,5 +61,5 @@ class State(ABC):
         pass
 
     #@abstractmethod
-    #def printEnv(self):
-    #    pass
+    def printEnv(self):
+        pass

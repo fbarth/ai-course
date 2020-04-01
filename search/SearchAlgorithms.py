@@ -136,25 +136,6 @@ class AEstrela (SearchAlgorithm):
                     print('nao entrou')
         return None
 
-class SubidaMontanhaEJ_FELIPE (SearchAlgorithm):
-
-    def best(self, successors):
-        best_state = successors[0]
-
-        for i in successors:
-            if i.h() < best_state.h():
-                best_state = i
-        return best_state
-        
-    def search (self, initialState):
-        currentState = initialState
-        
-        while True:
-            nextState = self.best(currentState.sucessors())
-            if nextState.h() >= currentState.h():
-                return currentState 
-            currentState = nextState 
-
 class SubidaMontanha (SearchAlgorithm):
 
     def best(self, successors):
@@ -193,39 +174,3 @@ class SubidaMontanha2 (SearchAlgorithm):
             else:
                 atual = prox
 
-
-class SubidaMontanhaPGB (SearchAlgorithm):
-
-    def search (self, initialState):
-        currentState = initialState
-        while True:
-            nextState = self.best_next(currentState.sucessors())
-            if nextState.h() >= currentState.h():
-                return currentState
-            currentState = nextState
-
-    def best_next(self, successors):
-        best_state = successors[0]
-        for i in successors:
-            if i.h() < best_state.h():
-                best_state = i
-        return best_state
-
-class SubidaMontanhaEnzo (SearchAlgorithm):
-
-    def search (self, initialState):
-        current = initialState
-        while True:
-            nextState = self.best(current.sucessors())
-            if nextState.h() >= current.h():
-                return current
-            if nextState.is_goal():
-                return nextState
-            current = nextState
-
-    def best(self, successors):
-        best_state = successors[0]
-        for i in successors:
-            if i.h() < best_state.h():
-                best_state = i
-        return best_state

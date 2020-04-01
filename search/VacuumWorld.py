@@ -43,7 +43,7 @@ class VacuumWorld(State):
         return sucessors
     
     def is_goal(self):
-        return (self.isLeftRoomClean and self.isRightRoomClean)
+        return (self.isLeftRoomClean and self.isRightRoomClean and (self.vacuumPosition == 'left'))
     
     def description(self):
         return "Problema do aspirador de pó, contendo duas salas"
@@ -59,7 +59,7 @@ def main():
     #
     # Executando busca em largura
     #
-    state = VacuumWorld('left', False, False, '')
+    state = VacuumWorld('left', True, False, '')
     algorithm = BuscaLargura()
     result = algorithm.search(state)
     if result != None:
@@ -71,9 +71,9 @@ def main():
     #
     # Executando busca em profundidade
     #
-    state = VacuumWorld('left', False, False, '')
+    state = VacuumWorld('left', True, False, '')
     algorithm = BuscaProfundidade()
-    result = algorithm.search(state, 10)
+    result = algorithm.search(state, 2)
     if result != None:
         print('Achou!')
         print(result.show_path())

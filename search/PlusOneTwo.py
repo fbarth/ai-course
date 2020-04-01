@@ -16,7 +16,7 @@ from Graph import State
 
 class PlusOneTwo(State):
 
-    Goal = 10
+    Goal = 40
 
     def __init__(self, number, op):
         self.number = number
@@ -29,9 +29,7 @@ class PlusOneTwo(State):
         return sucessors
     
     def is_goal(self):
-        if self.number == PlusOneTwo.Goal:
-            return True
-        return False
+        return self.number == PlusOneTwo.Goal
     
     def description(self):
         return "Problema simples com operadores de soma 1 e soma 2. Estados representados apenas por um numero"
@@ -47,47 +45,52 @@ class PlusOneTwo(State):
     def print(self):
         return str(self.operator)
 
+from datetime import datetime
 
 def main():
     
      #
      # Executando busca em largura
      #
+
      print('Busca em largura')
      state = PlusOneTwo(1, '')
      algorithm = BuscaLargura()
+     inicio = datetime.now()
      result = algorithm.search(state)
+     fim = datetime.now()
+     print(fim - inicio)
      if result != None:
          print('Achou!')
          print(result.show_path())
      else:
          print('Nao achou solucao')
     
-    # #
-    # # Executando busca em profundidade
-    # #
-    # print('Busca em profundidade')
-    # state = PlusOneTwo(1, '')
-    # algorithm = BuscaProfundidade()
-    # result = algorithm.search(state, 10)
-    # if result != None:
-    #     print('Achou!')
-    #     print(result.show_path())
-    # else:
-    #     print('Nao achou solucao')
-
-    # #
-    # # Executando busca em profundidade iterativa
-    # #
-    # print('Busca em profundidade iterativa')
-    # state = PlusOneTwo(1, '')
-    # algorithm = BuscaProfundidadeIterativa()
-    # result = algorithm.search(state)
-    # if result != None:
-    #     print('Achou!')
-    #     print(result.show_path())
-    # else:
-    #     print('Nao achou solucao')
+     #
+     # Executando busca em profundidade
+     #
+     print('Busca em profundidade')
+     state = PlusOneTwo(1, '')
+     algorithm = BuscaProfundidade()
+     result = algorithm.search(state, 50)
+     if result != None:
+        print('Achou!')
+        print(result.show_path())
+     else:
+        print('Nao achou solucao')
+        
+     #
+     # Executando busca em profundidade iterativa
+     #
+     print('Busca em profundidade iterativa')
+     state = PlusOneTwo(1, '')
+     algorithm = BuscaProfundidadeIterativa()
+     result = algorithm.search(state)
+     if result != None:
+        print('Achou!')
+        print(result.show_path())
+     else:
+        print('Nao achou solucao')
 
     # #
     # # Executando busca de custo uniforme
