@@ -16,7 +16,7 @@ from Graph import State
 
 class PlusOneTwo(State):
 
-    Goal = 40
+    Goal = 100
 
     def __init__(self, number, op):
         self.number = number
@@ -41,6 +41,7 @@ class PlusOneTwo(State):
         #Metodo de calculo do custo heuristico
         #Valor absoluto da distancia entre objetivo e proximo nó, garantindo que distancias negativas não existam
         return (abs(PlusOneTwo.Goal - self.number))
+        #return 0
     
     def print(self):
         return str(self.operator)
@@ -49,48 +50,47 @@ from datetime import datetime
 
 def main():
     
-     #
-     # Executando busca em largura
-     #
-
-     print('Busca em largura')
-     state = PlusOneTwo(1, '')
-     algorithm = BuscaLargura()
-     inicio = datetime.now()
-     result = algorithm.search(state)
-     fim = datetime.now()
-     print(fim - inicio)
-     if result != None:
-         print('Achou!')
-         print(result.show_path())
-     else:
-         print('Nao achou solucao')
-    
-     #
-     # Executando busca em profundidade
-     #
-     print('Busca em profundidade')
-     state = PlusOneTwo(1, '')
-     algorithm = BuscaProfundidade()
-     result = algorithm.search(state, 50)
-     if result != None:
-        print('Achou!')
-        print(result.show_path())
-     else:
-        print('Nao achou solucao')
+    #
+    # Executando busca em largura
+    #
+    # print('Busca em largura')
+    # state = PlusOneTwo(1, '')
+    # algorithm = BuscaLargura()
+    # inicio = datetime.now()
+    # result = algorithm.search(state)
+    # fim = datetime.now()
+    # print(fim - inicio)
+    # if result != None:
+    #     print('Achou!')
+    #     print(result.show_path())
+    # else:
+    #     print('Nao achou solucao')
+    #
+    #
+    # Executando busca em profundidade
+    #
+    # print('Busca em profundidade')
+    # state = PlusOneTwo(1, '')
+    # algorithm = BuscaProfundidade()
+    # result = algorithm.search(state, 50)
+    # if result != None:
+    #    print('Achou!')
+    #    print(result.show_path())
+    # else:
+    #    print('Nao achou solucao')
         
-     #
-     # Executando busca em profundidade iterativa
-     #
-     print('Busca em profundidade iterativa')
-     state = PlusOneTwo(1, '')
-     algorithm = BuscaProfundidadeIterativa()
-     result = algorithm.search(state)
-     if result != None:
-        print('Achou!')
-        print(result.show_path())
-     else:
-        print('Nao achou solucao')
+    #
+    # Executando busca em profundidade iterativa
+    #
+    # print('Busca em profundidade iterativa')
+    # state = PlusOneTwo(1, '')
+    # algorithm = BuscaProfundidadeIterativa()
+    # result = algorithm.search(state)
+    # if result != None:
+    #    print('Achou!')
+    #    print(result.show_path())
+    # else:
+    #    print('Nao achou solucao')
 
     # #
     # # Executando busca de custo uniforme
@@ -108,28 +108,28 @@ def main():
     # #
     # # Executando busca gananciosa
     # #
-    # print('Busca Gananciosa')
-    # state = PlusOneTwo(1, '')
-    # algorithm = BuscaGananciosa()
-    # result = algorithm.search(state)
-    # if result != None:
-    #     print('Achou!')
-    #     print(result.show_path())
-    # else:
-    #     print('Nao achou solucao')
+    print('Busca Gananciosa')
+    state = PlusOneTwo(1, '')
+    algorithm = BuscaGananciosa()
+    result = algorithm.search(state)
+    if result != None:
+        print('Achou!')
+        print(result.show_path())
+    else:
+        print('Nao achou solucao')
 
     ##
     ## Executando busca A*
     ##
-    #print('Busca A*')
-    #state = PlusOneTwo(1, '')
-    #algorithm = AEstrela()
-    #result = algorithm.search(state)
-    #if result != None:
-    #    print('Achou!')
-    #    print(result.show_path())
-    #else:
-    #    print('Nao achou solucao')
+    print('Busca A*')
+    state = PlusOneTwo(1, '')
+    algorithm = AEstrela()
+    result = algorithm.search(state)
+    if result != None:
+        print('Achou!')
+        print(result.show_path())
+    else:
+        print('Nao achou solucao')
         
 
 if __name__ == '__main__':

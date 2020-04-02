@@ -128,10 +128,10 @@ class AEstrela (SearchAlgorithm):
                 return n
             for i in n.state.sucessors():
                 new_n = Node(i,n)
-                if (new_n.state.env() not in states):
+                if (new_n.state not in states):
                     open.append((new_n,new_n.f()))
-                    states.append(new_n.state.env())
-                    print(len(states))
+                    states.append(new_n.state)
+                    #print(len(states))
                 else: 
                     print('nao entrou')
         return None
