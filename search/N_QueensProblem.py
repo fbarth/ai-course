@@ -15,6 +15,9 @@ class N_QueensProblem(State):
     def __init__(self, size, board):
         self.size = size
         self.board = board
+
+    def env(self):
+        return self.board
     
     def sucessors(self):
         sucessores = []
@@ -61,8 +64,8 @@ class N_QueensProblem(State):
     def print(self):
         pass
 
-    def printEnv(self):
-        return self.board
+    #def printEnv(self):
+    #    return self.board
     
     def h(self):
         # TODO falta calcular a diagonal ao contrario
@@ -117,12 +120,12 @@ def main():
     state.randomBoard()
     #algorithm = SubidaMontanha()
     algorithm = SubidaMontanha2()
-    print(state.printEnv())
+    #print(state.env())
     print(state.h())
     result = algorithm.search(state)
     if result != None:
         print('Achou!')
-        print(result.printEnv())
+        print(result.env())
         print(result.h())
     else:
         print('Nao achou solucao')

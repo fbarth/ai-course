@@ -4,8 +4,8 @@ from Graph import State
 class TaxiDriver(State):
 
     passanger = [2,7] #[4,5]
-    destiny = [5,2]
-    blocks = [[0,4],[1,4],[2,4],[3,4],[4,4],[5,4]]
+    destiny = [9,9]
+    blocks = [[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,4]]
     size = 10
 
     # passanger = [4,5]

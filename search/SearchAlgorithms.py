@@ -123,17 +123,21 @@ class AEstrela (SearchAlgorithm):
             #list sorted by f()
             open.sort(key = sortFunction, reverse = True)
             n = open.pop()[0]
-            print(n.state.printEnv())
+            #print(n.state.env())
             if (n.state.is_goal()):
                 return n
             for i in n.state.sucessors():
                 new_n = Node(i,n)
-                if (new_n.state not in states):
+                # eh necessario descrever o conteudo do estado
+                # para verificar se ele já foi instanciado ou nao
+                if (new_n.state.env() not in states):
                     open.append((new_n,new_n.f()))
-                    states.append(new_n.state)
+                    # nao eh adiciona o estado ao vetor.
+                    # eh adicionado o conteudo
+                    states.append(new_n.state.env())
                     #print(len(states))
-                else: 
-                    print('nao entrou')
+                #else: 
+                #    print('nao entrou')
         return None
 
 class SubidaMontanha (SearchAlgorithm):

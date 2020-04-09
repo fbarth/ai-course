@@ -25,6 +25,9 @@ class VacuumWorld(State):
         self.isLeftRoomClean = isLeftRoomClean #[True, False]
         self.isRightRoomClean = isRightRoomClean #[True, False]
         self.operator = op # string that describes the operation
+
+    def env(self):
+        return str(self.vacuumPosition)+";"+str(self.isLeftRoomClean)+";"+str(self.isRightRoomClean)
     
     def sucessors(self):
         sucessors = []
@@ -73,7 +76,7 @@ def main():
     #
     state = VacuumWorld('left', True, False, '')
     algorithm = BuscaProfundidade()
-    result = algorithm.search(state, 2)
+    result = algorithm.search(state, 10)
     if result != None:
         print('Achou!')
         print(result.show_path())

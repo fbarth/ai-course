@@ -21,6 +21,9 @@ class PlusOneTwo(State):
     def __init__(self, number, op):
         self.number = number
         self.operator = op
+
+    def env(self):
+        return str(self.number)
     
     def sucessors(self):
         sucessors = []
@@ -108,15 +111,15 @@ def main():
     # #
     # # Executando busca gananciosa
     # #
-    print('Busca Gananciosa')
-    state = PlusOneTwo(1, '')
-    algorithm = BuscaGananciosa()
-    result = algorithm.search(state)
-    if result != None:
-        print('Achou!')
-        print(result.show_path())
-    else:
-        print('Nao achou solucao')
+    #print('Busca Gananciosa')
+    #state = PlusOneTwo(1, '')
+    #algorithm = BuscaGananciosa()
+    #result = algorithm.search(state)
+    #if result != None:
+    #    print('Achou!')
+    #    print(result.show_path())
+    #else:
+    #    print('Nao achou solucao')
 
     ##
     ## Executando busca A*
