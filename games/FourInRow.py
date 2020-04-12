@@ -74,10 +74,8 @@ class FourInRow:
             current = None
             counter = 0
             x = np.diag(self.board, k=k)
-            #print(x)
             for i in range(0,len(x)-1):
                 if ((x[i] != 0) and (x[i] == x[i+1])):
-                    #print(str(x[i])+"; "+str(current)+"; "+str(counter))
                     if(x[i] == current):
                         counter = counter + 1
                         current = x[i]
@@ -93,10 +91,8 @@ class FourInRow:
             current = None
             counter = 0
             x = np.diag(temp, k=k)
-            #print(x)
             for i in range(0,len(x)-1):
                 if ((x[i] != 0) and (x[i] == x[i+1])):
-                    #print(str(x[i])+"; "+str(current)+"; "+str(counter))
                     if(x[i] == current):
                         counter = counter + 1
                         current = x[i]
