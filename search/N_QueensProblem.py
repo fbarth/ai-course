@@ -9,6 +9,7 @@ from Graph import State
 from random import randrange
 import numpy as np
 import random
+import time
 
 class N_QueensProblem(State):
 
@@ -63,38 +64,35 @@ class N_QueensProblem(State):
 
     def print(self):
         pass
-
-    #def printEnv(self):
-    #    return self.board
     
     def h(self):
-        # TODO falta calcular a diagonal ao contrario
         line_strikes = 0
         for i in range(0,self.size):
             temp = sum(self.board[i,:])
             if temp > 1:
                 line_strikes = line_strikes + temp
+        
         column_strikes = 0
         for i in range(0,self.size):
             temp = sum(self.board[:,i])
             if temp > 1:
                 column_strikes = column_strikes + temp
-        temp = sum(np.diag(self.board, k=0))
-        if temp > 1:
-            diag_strikes = temp
-        else:
-            diag_strikes = 0 
-        #print(np.diag(self.board, k=0))
-        for i in range(1,self.size-1):
-            temp = sum(np.diag(self.board, k=i))
-            #print(np.diag(self.board, k=i))
+        
+        diag_strikes = 0
+        for k in range((self.size-1)*-1, self.size-1):
+            temp = sum(np.diag(self.board, k=k))
             if temp > 1:
-                diag_strikes = diag_strikes + temp 
-            temp = sum(np.diag(self.board, k=-i))
-            #print(np.diag(self.board, k=-i))
+                diag_strikes = diag_strikes + temp
+        
+        diag_strikes_inv = 0
+        # by Daniel Shimoda
+        inv = self.board[::-1]
+        for k in range((self.size-1)*-1, self.size-1):
+            temp = sum(np.diag(inv, k=k))
             if temp > 1:
-                diag_strikes = diag_strikes + temp        
-        return line_strikes + column_strikes + diag_strikes
+                diag_strikes_inv = diag_strikes_inv + temp
+        
+        return line_strikes + column_strikes + diag_strikes + diag_strikes_inv
 
     def randomBoard(self):
         self.board = self.generateBoard()
@@ -116,17 +114,19 @@ class N_QueensProblem(State):
 
 def main():
     print('Busca Subida da Montanha')
-    state = N_QueensProblem(size = 4, board = None)
+    state = N_QueensProblem(size = 6, board = None)
     state.randomBoard()
     #algorithm = SubidaMontanha()
     algorithm = SubidaMontanha2()
-    #print(state.env())
-    print(state.h())
+    print("Initial state with h = "+str(state.h()))
+    start = time.time()
     result = algorithm.search(state)
+    end = time.time()
     if result != None:
-        print('Achou!')
+        #print('Achou!')
         print(result.env())
-        print(result.h())
+        print('Final state with h = '+str(result.h()))
+        print('Duration in seconds = '+str(end-start))
     else:
         print('Nao achou solucao')
 

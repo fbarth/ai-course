@@ -1,4 +1,3 @@
-from random import randint
 from Player import Player
 
 class ManualPlayer(Player):
