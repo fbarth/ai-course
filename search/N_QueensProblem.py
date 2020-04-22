@@ -114,7 +114,7 @@ class N_QueensProblem(State):
 
 def main():
     print('Busca Subida da Montanha')
-    state = N_QueensProblem(size = 6, board = None)
+    state = N_QueensProblem(size = 7, board = None)
     state.randomBoard()
     #algorithm = SubidaMontanha()
     algorithm = SubidaMontanha2()

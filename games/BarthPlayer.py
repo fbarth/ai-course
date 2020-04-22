@@ -10,9 +10,9 @@ class PlayerSpecification(Player):
     def sucessores(self, player_code, board):
         suc = []
         for i in range(0,7):
-            mov = self.movement(player_code, board, i)
-            if(mov != None):
-                suc.append()
+            b = self.movement(player_code, board, i)
+            if(b != None):
+                suc.append(b)
         return suc
 
     def eval(self, board):
