@@ -5,6 +5,9 @@ class PlayerSpecification(Player):
     def move(self, player_code, board):
         sucessores = self.sucessores(player_code, board)
         # for each sucessor in sucessores calcular o eval
+        # selecionar o sucessor com maior eval
+        # retornar o movimento (coluna) que me leva para o 
+        # sucessor (estado) de maior eval
         return None
 
     def sucessores(self, player_code, board):
@@ -15,7 +18,7 @@ class PlayerSpecification(Player):
                 suc.append(b)
         return suc
 
-    def eval(self, board):
+    def eval(self, player, board):
         # se o meu oponente tem quatro em uma linha entao -100000
         # senao 100000*(#4-in-row) + 100*(#3-in-row) + (#2-in-row)
         return None
