@@ -31,9 +31,6 @@ gamma = 0.6
 # during training.
 epsilon = 0.1
 
-# For plotting metrics
-all_epochs = []
-all_penalties = []
 
 for i in range(1, 100001):
     state = env.reset()

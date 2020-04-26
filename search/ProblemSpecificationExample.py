@@ -23,6 +23,9 @@ class ProblemSpecification(State):
 
     def print(self):
         return str(self.operator)
+    
+    def env(self):
+        None
 
 
 def main():
