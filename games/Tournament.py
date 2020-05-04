@@ -7,4 +7,4 @@ print('Ramdom vs Barth \n')
 FourInRow(RandomPlayer(), BarthPlayer()).game()
 
 print('Barth vs Manual \n')
-FourInRow(BarthPlayer(), ManualPlayer()).game()
+FourInRow(BarthPlayer(), RandomPlayer()).game()

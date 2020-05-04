@@ -8,6 +8,7 @@
 import numpy as np
 from RandomPlayer import RandomPlayer
 from ManualPlayer import ManualPlayer
+from BarthPlayer import BarthPlayer
 
 class FourInRow:
 
@@ -113,7 +114,7 @@ class FourInRow:
         print('Player ' + str(k+1) + ' is the winner!')
 
 def main():
-    FourInRow(ManualPlayer(), RandomPlayer()).game()
+    FourInRow(BarthPlayer(), BarthPlayer()).game()
 
 if __name__ == '__main__':
     main()

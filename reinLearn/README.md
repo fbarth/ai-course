@@ -4,19 +4,20 @@ Nesta pasta você irá encontrar alguns exemplos de implementações utilizadno 
 
 Os exemplos utilizam um projeto chamado **OpenAI Gym**. 
 
+Para executar os exemplos você terá que primeiro instalar o pacote do **OpenAI Gym**: 
+
 ````
 pip install cmake 'gym[atari]' scipy
 ````
 
-O primeiro grupo de exemplos está relacionado com o ambiente *Taxi-v3*:
+O primeiro grupo de exemplos está relacionado com os ambientes *Taxi-v3* e *FrozenLake*:
 
-- TaxiDriverGym_1.py: Exemplo simples para entender os conceitos de environment, space e action no ambiente Gym.
-- TaxiDriverGym_2.py: Outro exemplo bem simples só para entender como configurar um state no environment *Taxi-v3*.
-- TaxiDriverGym_3.py: Mostra uma implementação aleatória procurando pela solução no *Taxi-v3* (ideia: poderíamos conectar a nossa implementação usando A* com este framework). 
-- TaxiDriverGym_4.py: Implmentação mais complexa que mostra o treinamento de um agente usando o algoritmo *Q-Learning*. 
+- TaxiDriverGym_introduction.py: Exemplo simples para entender os conceitos de environment *Taxi-v3*, space e action no ambiente Gym (ideia: poderíamos conectar a nossa implementação usando A* com este framework). 
+- TaxiDriverGym.py: Implementação que mostra o treinamento de um agente usando o algoritmo *Q-Learning*. 
+- QLearning.py: Implementação do algoritmo QLearning que pode ser utilizado por environments modo texto do projeto **Gym**.  
+- FrozenLake_introduction.py: Exemplo simples para entender os conceitos do environment *FrozenLake-v0*. 
+- FrozenLake.py: Implementação que mostra o treinamento de um agente usando o algoritmo *Q-Learning*.
 
-O segundo grupo de implmentações componentiza o algoritmo Q-Learning para reutilizar este algoritmo em diversos environments:
+O segundo grupo de exemplos está relacionado com ambientes que o espaço não é texto, mas são espaços gráficos 2D: 
 
-- QLearning.py: Implementação do algoritmo QLearning. Esta classe gera uma q-table para cada environment e grava em arquivo.
-- TaxiDriverGym_5.py: faz uso do QLearning.py para gerar uma única vez a q-table e executar diversas vezes o problema do taxi driver.
-
+- MountainCar.py: Exemplo de um carro que precisa aprender como subir uma montanha. 

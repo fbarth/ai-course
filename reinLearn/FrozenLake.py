@@ -5,27 +5,22 @@ import numpy as np
 from QLearning import QLearning
 from numpy import loadtxt
 
-env = gym.make("Taxi-v3").env
-env.s = 328
+# exemplo de ambiente nao determinístico
+env = gym.make('FrozenLake-v0').env
 
-# only execute the following lines if you want to create a 
-# new q-table
-# qlearn = QLearning(env)
-# qlearn.train('q-table-taxi-driver.csv')
-
-q_table = loadtxt('q-table-taxi-driver.csv', delimiter=',')
+# only execute the following lines if you want to create a new q-table
+#qlearn = QLearning(env, alpha=0.5, gamma=0.9, epsilon=0.7, epsilon_min=0.1, epsilon_dec=0.9999, episodes=100000)
+#q_table = qlearn.train('data/q-table-frozen-lake.csv')
+q_table = loadtxt('data/q-table-frozen-lake.csv', delimiter=',')
 
 state = env.reset()
-epochs, penalties, reward = 0, 0, 0
+epochs = 0
 done = False
 frames = [] # for animation
     
 while not done:
     action = np.argmax(q_table[state])
     state, reward, done, info = env.step(action)
-
-    if reward == -10:
-        penalties += 1
 
     # Put each rendered frame into dict for animation
     frames.append({
@@ -57,4 +52,3 @@ print_frames(frames)
 
 print("\n")
 print("Timesteps taken: {}".format(epochs))
-print("Penalties incurred: {}".format(penalties))
