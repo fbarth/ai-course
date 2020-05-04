@@ -2,13 +2,13 @@
 
 Nesta pasta você irá encontrar alguns exemplos de implementações utilizadno Aprendizagem por Reforço (*reinforcement learning*).
 
-Os exemplos utilizam um projeto chamado **OpenAI Gym**. 
-
-Para executar os exemplos você terá que primeiro instalar o pacote do **OpenAI Gym**: 
+Os exemplos utilizam um projeto chamado **OpenAI Gym**. Para executar os exemplos você terá que primeiro instalar o pacote: 
 
 ````
 pip install cmake 'gym[atari]' scipy
 ````
+
+## Exemplos
 
 O primeiro grupo de exemplos está relacionado com os ambientes *Taxi-v3* e *FrozenLake*:
 
@@ -21,3 +21,9 @@ O primeiro grupo de exemplos está relacionado com os ambientes *Taxi-v3* e *Fro
 O segundo grupo de exemplos está relacionado com ambientes que o espaço não é texto, mas são espaços gráficos 2D: 
 
 - MountainCar.py: Exemplo de um carro que precisa aprender como subir uma montanha. 
+
+## Referências
+
+- https://gym.openai.com/
+- https://github.com/openai/gym/wiki/FrozenLake-v0
+- https://github.com/openai/gym/wiki/MountainCar-v0
