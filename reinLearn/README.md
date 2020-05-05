@@ -5,7 +5,7 @@ Nesta pasta você irá encontrar alguns exemplos de implementações utilizadno 
 Os exemplos utilizam um projeto chamado **OpenAI Gym**. Para executar os exemplos você terá que primeiro instalar o pacote: 
 
 ````
-pip install cmake 'gym[atari]' scipy
+pip3 install cmake 'gym[atari]' scipy
 ````
 
 ## Exemplos
@@ -22,8 +22,25 @@ O segundo grupo de exemplos está relacionado com ambientes que o espaço não �
 
 - MountainCar.py: Exemplo de um carro que precisa aprender como subir uma montanha. 
 
+## Instalação de todos os environments
+
+Para utilizar todos os environments é necessário fazer a instalação completa do pacote Gym:
+
+````
+pip3 install 'gym[all]'
+````
+
+No comando acima deixa-se claro que a instalação é no pip3, ou seja, no python3. No entanto, na sua máquina talvez seja necessário apenas informar pip. 
+
+
+## Exemplos não terminados
+
+- LunarLander.py: 
+- MsPacman.py: 
+
 ## Referências
 
 - https://gym.openai.com/
 - https://github.com/openai/gym/wiki/FrozenLake-v0
 - https://github.com/openai/gym/wiki/MountainCar-v0
+- https://gym.openai.com/envs/LunarLander-v2/
