@@ -16,3 +16,7 @@ class PlayerSpecification(Player):
         # Além disso, não pode escolher uma coluna que já esteja completa. 
         #
         return None
+    
+    def name(self):
+        # retorna o nome do jogador
+        return None

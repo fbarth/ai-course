@@ -2,7 +2,10 @@ from Player import Player
 import numpy as np
 from random import randint
 
-class BarthPlayer(Player):
+class ExamplePlayer(Player):
+
+    def name(self):
+        return "Exemplo"
 
     def max_value(self, board, action, player_code, p):
         if (p==0):

@@ -111,10 +111,10 @@ class FourInRow:
             k = (int)(not k)
             self.movement(k+1, self.players[k].move(k+1, self.board))
             self.printBoard()
-        print('Player ' + str(k+1) + ' is the winner!')
+        print('Player ' + self.players[k].name() + ' is the winner!')
 
 def main():
-    FourInRow(BarthPlayer(), BarthPlayer()).game()
+    FourInRow(BarthPlayer(), RandomPlayer()).game()
 
 if __name__ == '__main__':
     main()
