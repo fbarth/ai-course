@@ -5,6 +5,7 @@ from random import randint
 class ExamplePlayer(Player):
 
     def name(self):
+        # TODO alterar o nome da classe, do arquivo e do retorno deste método
         return "Exemplo"
 
     def max_value(self, board, action, player_code, p):
