@@ -9,6 +9,7 @@ import numpy as np
 from RandomPlayer import RandomPlayer
 from ManualPlayer import ManualPlayer
 from BarthPlayer import BarthPlayer
+import datetime
 
 class FourInRow:
 
@@ -109,12 +110,16 @@ class FourInRow:
         k=1
         while (not self.endOfGame()):
             k = (int)(not k)
+            inicio = datetime.datetime.now()
             self.movement(k+1, self.players[k].move(k+1, self.board))
+            dur = (datetime.datetime.now() -inicio).total_seconds()
+            if(dur > 10):
+                print('Player '+ self.players[k].name() + ' duration (seconds): '+ str(dur))
             self.printBoard()
         print('Player ' + self.players[k].name() + ' is the winner!')
 
 def main():
-    FourInRow(BarthPlayer(), RandomPlayer()).game()
+    FourInRow(BarthPlayer(), ManualPlayer()).game()
 
 if __name__ == '__main__':
     main()
