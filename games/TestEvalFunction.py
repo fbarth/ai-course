@@ -15,3 +15,4 @@ print(board)
 
 action = BarthPlayer().move(2, board)
 print(action)
+

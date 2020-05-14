@@ -9,6 +9,7 @@ import numpy as np
 from RandomPlayer import RandomPlayer
 from ManualPlayer import ManualPlayer
 from BarthPlayer import BarthPlayer
+from LucasDaniel import LucasDaniel
 import datetime
 
 class FourInRow:
@@ -108,6 +109,7 @@ class FourInRow:
 
     def game(self):
         k=1
+        # TODO preciso identificar empate!
         while (not self.endOfGame()):
             k = (int)(not k)
             inicio = datetime.datetime.now()
@@ -117,9 +119,11 @@ class FourInRow:
                 print('Player '+ self.players[k].name() + ' duration (seconds): '+ str(dur))
             self.printBoard()
         print('Player ' + self.players[k].name() + ' is the winner!')
+        # returning the winner name
+        return self.players[k].name()
 
 def main():
-    FourInRow(BarthPlayer(), ManualPlayer()).game()
+    FourInRow(LucasDaniel(), ManualPlayer()).game()
 
 if __name__ == '__main__':
     main()

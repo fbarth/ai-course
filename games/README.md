@@ -40,3 +40,25 @@ def move(self, player_code, board):
 ````
 
 * PlayerSpecification.py: é um exemplo de como você deve começar a sua implementação. 
+
+## Execução do campeonato
+
+````
+python3 Tournament.py > logs/competicao_results.log &
+````
+
+## Análise dos resultados
+
+Para verificar quem venceu de quem:
+
+````
+cat logs/competicao_results.log | grep -e 'winner\|vs'  
+````
+
+Para identificar quem ultrapassou o limite de 15 segundos por jogada:
+
+````
+cat logs/competicao_results.log | grep -e 'duration' 
+````
+
+
