@@ -6,9 +6,9 @@
 pip3 install cmake 'gym[atari]' scipy
 ````
 
-* Execute cada um dos comandos que estão no arquivo (TaxiDriverGym_introduction.py)[TaxiDriverGym_introduction.py] em um interpretador python para entender o que o que é environment, reward e action. Além de entender detalhes do ambiente.  
+* Execute cada um dos comandos que estão no arquivo [TaxiDriverGym_introduction.py](TaxiDriverGym_introduction.py) em um interpretador python para entender o que o que é environment, reward e action. Além de entender detalhes do ambiente.  
 
-* Trabalhe com o arquivo (TaxiDriverGym.py)[TaxiDriverGym.py]:
+* Trabalhe com o arquivo [TaxiDriverGym.py](TaxiDriverGym.py):
 
     * Abra em um editor de texto e descomente as linhas 12 e 13 e comente a linha 14: 
 
