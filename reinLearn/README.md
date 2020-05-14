@@ -40,7 +40,7 @@ No comando acima deixa-se claro que a instalação é no pip3, ou seja, no pytho
 
 ## Atividades
 
-Não deixe de ler o arquivo [Atividades.md]. Este arquivo tem uma lista com propostas de exercícios para compreender melhor o projeto Gym e os conceitos relacionados com Aprendizagem por Reforço. 
+Não deixe de ler o arquivo (Atividades.md)[Atividades.md]. Este arquivo tem uma lista com propostas de exercícios para compreender melhor o projeto Gym e os conceitos relacionados com Aprendizagem por Reforço. 
 
 ## Referências
 
