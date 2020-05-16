@@ -5,8 +5,17 @@ from LucasDaniel import LucasDaniel
 from CheddarPlayer import CheddarPlayer
 from SushiPlayer import SushiPlayer
 from AllanGuilherme import AllanPlayer
+from Bru_Jose import Bru_Jose
 
-players = [RandomPlayer(), BarthPlayer(), LucasDaniel(), CheddarPlayer(), SushiPlayer(), AllanPlayer()]
+players = [
+    RandomPlayer(), 
+    BarthPlayer(), 
+    LucasDaniel(), 
+    CheddarPlayer(), 
+    SushiPlayer(), 
+    AllanPlayer(),
+    Bru_Jose()]
+    
 points = {}
 for p in players:
     points[p.name()] = 0
