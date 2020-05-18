@@ -24,7 +24,7 @@ pip3 install cmake 'gym[atari]' scipy
 ````
 # only execute the following lines if you want to create a new q-table
 qlearn = QLearning(env, alpha=0.1, gamma=0.6, epsilon=0.7, epsilon_min=0.05, epsilon_dec=0.99, episodes=100000)
-q_table = qlearn.train('data/q-table-taxi-driver.csv')
+q_table = qlearn.train('data/q-table-taxi-driver.csv', 'results/actions_taxidriver')
 #q_table = loadtxt('data/q-table-taxi-driver.csv', delimiter=',')
 ````
 
@@ -33,7 +33,8 @@ q_table = qlearn.train('data/q-table-taxi-driver.csv')
 python3 TaxiDriverGym.py
 ````
 
-Lembre-se que nesta execução o programa irá criar toda a Q-table e armazenar no arquivo data/q-table-taxi-driver.csv. Depois de calcular os valores para a Q-table o programa irá resolver um dos possíveis cenários considerando um estado inicial qualquer. 
+Lembre-se que nesta execução o programa irá criar toda a Q-table e armazenar no arquivo data/q-table-taxi-driver.csv. Depois de calcular os valores para a Q-table o programa irá resolver um dos possíveis cenários considerando um estado inicial qualquer. Além disso, o programa irá gerar dois plots 
+no diretório results que descrevem a quantidade de ações executadas em cada época. 
 
 * Agora faça o algoritmo [TaxiDriverGym.py](TaxiDriverGym.py) ler a Q-table a partir do arquivo gerado anteriormente e veja qual é o comportamento. Execute diversas vezes.
 
@@ -57,8 +58,27 @@ qlearn = QLearning(env, alpha=0, gamma=0.6, epsilon=0.7, epsilon_min=0.05, epsil
 
 * O que aconteceu com a execução das ações? O resultado foi o esperado? Descreve o que aconteceu.
 
+## Trabalhe com o arquivo [FrozenLake.py](FrozenLake.py)
+
+* Abra em um editor de texto e descomente as linhas 12 e 13 e comente a linha 14. O código deve ficar como abaixo:
+````
+# only execute the following lines if you want to create a new q-table
+qlearn = QLearning(env, alpha=0.9, gamma=0.95, epsilon=0.7, epsilon_min=0.1, epsilon_dec=0.9999, episodes=100000)
+q_table = qlearn.train('data/q-table-frozen-lake.csv','results/actions_frozen_lake')
+#q_table = loadtxt('data/q-table-frozen-lake.csv', delimiter=',')
+````
+
+* Execute o arquivo [FrozenLake.py](FrozenLake.py) com o comando:
+````
+python3 FrozenLake.py
+````
+
+* Os dois arquivos, TaxiDriver.py e FrozenLake.py, geraram os arquivos results/actions_taxidriver.jpg e results/actions_frozen_lake.jpg, respectivamente. Existe uma diferença significativa entre os arquivos? Se existir, diga qual é e justifique a sua resposta. 
+
+* Agora faça o algoritmo [FrozenLake.py](FrozenLake.py) ler a Q-table a partir do arquivo gerado anteriormente e veja qual é o comportamento. Execute diversas vezes. Ele consegue chegar ao objetivo sempre? Ele consegue chegar ao objetivo na maioria das vezes? 
 
 
+## Próximo exercício: MountainCar.py
 
 
 

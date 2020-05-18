@@ -3,6 +3,7 @@ import gym
 import random
 from numpy import savetxt
 import sys
+import matplotlib.pyplot as plt
 
 #
 # This class implements the Q Learning algorithm.
@@ -27,12 +28,14 @@ class QLearning:
             return self.env.action_space.sample() # Explore action space
         return np.argmax(self.q_table[state]) # Exploit learned values
 
-    def train(self, filename):
+    def train(self, filename, plotFile):
+        actions_per_episode = []
         for i in range(1, self.episodes+1):
             state = self.env.reset()
             reward = 0
             done = False
-    
+            actions = 0
+
             while not done:
                 action = self.select_action(state)
                 next_state, reward, done, _ = self.env.step(action) 
@@ -44,15 +47,33 @@ class QLearning:
                 self.q_table[state, action] = new_value
                 
                 state = next_state
+                actions += 1
 
             if i % 100 == 0:
+                actions_per_episode.append(actions)
                 sys.stdout.write("Episodes: " + str(i) +'\r')
                 sys.stdout.flush()
-                #print(f"Episode: {i}", flush=True)
             
             if self.epsilon > self.epsilon_min:
                 self.epsilon = self.epsilon * self.epsilon_dec
 
-
         savetxt(filename, self.q_table, delimiter=',')
+        if (plotFile is not None): self.plotactions(plotFile, actions_per_episode)
         return self.q_table
+
+    def plotactions(self, plotFile, actions_per_episode):
+        plt.plot(actions_per_episode)
+        plt.xlabel('Episodes')
+        plt.ylabel('# Actions')
+        plt.title('# Actions vs Episodes')
+        plt.savefig(plotFile+".jpg")     
+        plt.close()
+
+        size = len(actions_per_episode)
+        start = (int)(size - (size * 0.1))
+        plt.plot(actions_per_episode[start:])
+        plt.xlabel('Episodes')
+        plt.ylabel('# Actions')
+        plt.title('# Actions vs Episodes (Last episodes)')
+        plt.savefig(plotFile+"_last.jpg")     
+        plt.close()

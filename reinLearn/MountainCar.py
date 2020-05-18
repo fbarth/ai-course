@@ -9,7 +9,6 @@ import matplotlib.pyplot as plt
 # I changed:
 #  * the initialize of Q table
 #  * the way that the solution decay epsilon
-# 
 #
 
 env = gym.make('MountainCar-v0')
@@ -118,7 +117,7 @@ plt.close()
 
 plt.plot(100*(np.arange(len(qtd_actions)) + 1), qtd_actions)
 plt.xlabel('Episodes')
-plt.ylabel('# actions')
-plt.title('# actions vs Episodes')
+plt.ylabel('# Actions')
+plt.title('# Actions vs Episodes')
 plt.savefig('results/actions_MountainCar-v0.jpg')     
 plt.close()  

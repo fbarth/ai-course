@@ -9,7 +9,7 @@ env = gym.make("Taxi-v3").env
 
 # only execute the following lines if you want to create a new q-table
 qlearn = QLearning(env, alpha=0.1, gamma=0.6, epsilon=0.7, epsilon_min=0.05, epsilon_dec=0.99, episodes=100000)
-q_table = qlearn.train('data/q-table-taxi-driver.csv')
+q_table = qlearn.train('data/q-table-taxi-driver.csv', 'results/actions_taxidriver')
 #q_table = loadtxt('data/q-table-taxi-driver.csv', delimiter=',')
 
 state = env.reset()
