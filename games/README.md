@@ -61,4 +61,52 @@ Para identificar quem ultrapassou o limite de 15 segundos por jogada:
 cat logs/competicao_results.log | grep -e 'duration' 
 ````
 
+## Resultado final do campeonato
+
+O campeonato foi executado utilizando o comando abaixo:
+
+````
+cd games
+python3 Tournament.py > logs/competicao_results_final.log &
+````
+
+Ao analisar o log é possível verificar que nenhum jogador cometeu infrações e todos os jogadores respeitaram os 15 segundos para cada jogada. O resultado da competição é apresentado ao final do arquivo de log:
+
+````
+{
+    'Barth': 3, 
+    'Daniel/Lucas': 10, 
+    'Cheddar Player': 1, 
+    'Sushi': 7, 
+    'Allan': 5, 
+    'Bru_Jose': 4
+}
+````
+
+Desta forma, a colocação final foi: 
+
+* 1o lugar: Daniel/Lucas
+* 2o lugar: Sushi player
+* 3o lugar: Allan/Guilherme
+* 4o lugar: Bruna/José
+* 5o lugar: Cheddar player
+
+## Comentários sobre o resultado do campeonato
+
+O jogador Daniel/Lucas ganhou todos os jogos. É um jogador que faz uso de uma função de avaliação muito robusta, conseguindo também identificar situações de risco para o jogador. Faz uso de uma implementação de MinMax com poda alpha/beta que só inicia a busca se o estado atual não é um estado final. A profundidade utilizada por este jogador para o algotimo MinMax é 5.
+
+O jogador Bruna/José faz uso de uma estrutura muito similar ao jogador Daniel/Lucas. No entanto, a profundidade para a rotina MinMax configurada neste jogador é de 1. Isto fez este jogador perder diversas partidas para os demais jogadores. 
+
+Os jogadores Sushi player, Cheddar player e Barth implementam o algoritmo MinMax com poda alpha/beta e fazem uso de uma função de utilidade muito parecida. Esta função de utilidade tem uma falha ao não analisar bem o lado esquerdo do tabuleiro. Ou seja, é uma função de utilidade mais fraca que a implementada nos jogadores Daniel/Lucas e Bruna/José. 
+
+O jogador Allan/Guilerme implementa o algoritmo MinMax sem poda e com profundidade 3. Faz uso da mesma função de utilidade que os jogadores Sushi player, Cheddar player e Barth. 
+
+Os jogadores Sushi player, Cheddar player e Barth têm diferentes profundidades configuradas. Sushi player e Barth têm profundidade igual a 5. Cheddar tem profundidade igual a 6. 
+
+
+
+
+
+
+
 
