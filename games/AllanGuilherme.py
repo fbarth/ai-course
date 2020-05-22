@@ -2,36 +2,37 @@ from Player import Player
 import numpy as np
 from random import randint
 
-class BarthPlayer(Player):
+class AllanPlayer(Player):
 
     def name(self):
-        return "Barth"
+        # TODO alterar o nome da classe, do arquivo e do retorno deste método (DONE)
+        return "Allan"
 
-    def max_value(self, board, action, alpha, beta, player_code, p):
+    def max_value(self, board, action, player_code, p):
         if (p==0):
+            # retorna o valor para o estado e a acao que gerou o estado (Done)
             return self.eval(player_code, board), action
-        sucessores = self.sucessores(player_code, board)
+        v = -99999
+        sucessores = self.sucessores(player_code, board)#TODO executar o metodo sucessores(DONE)
         for s in sucessores:
-            mv, ac = self.min_value(s['board'], s['action'], alpha, beta, player_code, p-1)
-            if (mv > alpha):
-                alpha = mv
+            mv, ac = self.min_value(s['board'], s['action'], player_code, p-1) #TODO executar o metodo min_value (DONE)
+            if (mv > v):
+                v = mv
                 action = ac
-            if (alpha >= beta):
-                return alpha, action
-        return alpha, action
+        return v, action
     
-    def min_value(self, board, action, alpha, beta, player_code, p):
+    def min_value(self, board, action, player_code, p):
         if (p==0):
+            # retorna o valor para o estado e a acao que gerou o estado (Done)
             return self.eval(player_code, board), action
-        sucessores = self.sucessores(player_code, board)
+        v = 99999
+        sucessores = self.sucessores(player_code, board)#TODO executar o metodo sucessores(DONE)
         for s in sucessores:
-            mv, ac = self.max_value(s['board'], s['action'], alpha, beta, player_code, p-1)
-            if (mv < beta):
-                beta = mv
+            mv, ac = self.max_value(s['board'], s['action'], player_code, p-1) #TODO executar o metodo min_value (DONE)
+            if (mv < v):
+                v = mv
                 action = ac
-            if (beta <= alpha):
-                return beta, action 
-        return beta, action
+        return v, action
 
     def isThereAnyEmergency(self, board, player_code):
         opponent = self.opponent(player_code)
@@ -45,9 +46,13 @@ class BarthPlayer(Player):
 
 
     def move(self, player_code, board):
-        _, action = self.max_value(board, None, -999999, 999999, player_code, 5)
+        # TODO qual é o maior p que podemos utilizar sem correr o
+        # risco de ultrapassar os 15s? 
+        _, action = self.max_value(board, None, player_code, 3)
         #
-        # Poderiamos fazer soh o 
+        # Poderiamos fazer soh a chamada acima. mas o controle abaixo
+        # garante que quando o adversario estah para ganhar o jogo podemos
+        # fazer algo antes
         #
         if (self.isThereAnyEmergency(board, player_code)):
             # simulando ser o adversario para identificar qual a jogada de vitoria
@@ -57,7 +62,6 @@ class BarthPlayer(Player):
                 if (v > 70000):
                     return s['action']
         return action
-            
 
         # sucessores = self.sucessores(player_code, board)
         # max_eval = 0
@@ -90,8 +94,7 @@ class BarthPlayer(Player):
             [0., 0., 1., 1., 1., 0., 0.],
             [0., 0., 1., 1., 1., 0., 0.],
             [0., 0., 1., 1., 1., 0., 0.],
-            [0., 1., 1., 1., 1., 1., 0.]])
-        
+            [0., 1., 1., 1., 1., 1., 0.]])   
         return np.sum(np.logical_and(board==player, h))
 
     def eval(self, player, board): 
@@ -102,9 +105,6 @@ class BarthPlayer(Player):
         my_qtd_2 = my_points_line['2'] + my_points_col['2'] + my_points_dig['2'] + my_points_dig2['2']
         my_qtd_3 = my_points_line['3'] + my_points_col['3'] + my_points_dig['3'] + my_points_dig2['3']
         my_qtd_4 = my_points_line['4'] + my_points_col['4'] + my_points_dig['4'] + my_points_dig2['4']
-        #print('my 2', str(my_qtd_2))
-        #print('my 3', str(my_qtd_3))
-        #print('my 4', str(my_qtd_4))
         sum_my_points = 100000*my_qtd_4 + 100*my_qtd_3 + my_qtd_2
 
         opponent = self.opponent(player)
@@ -115,11 +115,11 @@ class BarthPlayer(Player):
         op_qtd_2 = op_points_line['2'] + op_points_col['2'] + op_points_dig['2'] + op_points_dig2['2']
         op_qtd_3 = op_points_line['3'] + op_points_col['3'] + op_points_dig['3'] + op_points_dig2['3']
         op_qtd_4 = op_points_line['4'] + op_points_col['4'] + op_points_dig['4'] + op_points_dig2['4']
-        #print('op 2', str(op_qtd_2))
-        #print('op 3', str(op_qtd_3))
-        #print('op 4', str(op_qtd_4))
         sum_op_points = 100000*op_qtd_4 + 10000*op_qtd_3 + op_qtd_2
         
+        #
+        # TODO: explicar esta funcao de avaliacao
+        #
         return sum_my_points - sum_op_points + self.domain_center(player, board)
 
     def count_row_line(self, player, board):
