@@ -1,5 +1,5 @@
 from FourInRow import FourInRow
-#from RandomPlayer import RandomPlayer
+from RandomPlayer import RandomPlayer
 from BarthPlayer import BarthPlayer
 from LucasDaniel import LucasDaniel
 from CheddarPlayer import CheddarPlayer
@@ -8,11 +8,11 @@ from AllanGuilherme import AllanPlayer
 from Bru_Jose import Bru_Jose
 
 players = [
-#    RandomPlayer(), 
-    BarthPlayer(), 
-    LucasDaniel(), 
-    CheddarPlayer(), 
-    SushiPlayer(), 
+    RandomPlayer(),
+    BarthPlayer(),
+    LucasDaniel(),
+    CheddarPlayer(),
+    SushiPlayer(),
     AllanPlayer(),
     Bru_Jose()]
     
