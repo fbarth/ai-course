@@ -50,4 +50,4 @@ Os vídeos serão avaliados levando-se em consideração os seguintes critérios
 
 O projeto de implementação será utilizar Aprendizagem por Reforço para resolver um dos problemas do projeto Gym ou implementar uma solução para um dos problemas já vistos na disciplina ou algum outro problema de interesse do aluno. 
 
-Assim que o aluno decidir por qual tema será o seu projeto, o aluno deverá enviar um email para o professor da disciplina informando o tema. Lembre-se: existem alguns temas que apenas um (1) aluno poderá fazer. Estes temas serão atribuídos aos alunos por ordem de chegada. 
+Assim que o aluno decidir o tema do seu projeto, o aluno deverá enviar um email para o professor da disciplina informando o tema. Lembre-se: existem alguns temas que apenas um (1) aluno poderá fazer. Para os temas com esta restrição o aluno que primeiro informar o professor ficará com o tema.
