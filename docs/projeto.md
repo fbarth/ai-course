@@ -1,6 +1,8 @@
 # Projeto final da disciplina de Inteligência Artificial
 
-A avaliação final será na forma de trabalho e deverá ser entregue até o dia 17/06. Teremos dois tipos de trabalhos: (i) implementação, ou; (ii) produção de conteúdo. 
+A avaliação final será na forma de trabalho e deverá ser entregue até o dia 17/06. Teremos dois tipos de trabalhos: 
+  * implementação, ou; 
+  * produção de conteúdo. 
 
 Este trabalho é individual e cada aluno deverá escolher um tipo de trabalho: ou implementação ou produção de conteúdo. 
 
@@ -46,5 +48,6 @@ Os vídeos serão avaliados levando-se em consideração os seguintes critérios
 
 ## Implementação
 
+O projeto de implementação será utilizar Aprendizagem por Reforço para resolver um dos problemas do projeto Gym ou implementar uma solução para um dos problemas já vistos na disciplina ou algum outro problema de interesse do aluno. 
 
-Assim que o aluno decidir por qual te
+Assim que o aluno decidir por qual tema será o seu projeto, o aluno deverá enviar um email para o professor da disciplina informando o tema. Lembre-se: existem alguns temas que apenas um (1) aluno poderá fazer. Estes temas serão atribuídos aos alunos por ordem de chegada. 
