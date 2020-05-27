@@ -3,6 +3,10 @@ from random import randint
 import numpy as np
 import math
 
+#
+# authors: Cesar
+# date: May, 2020
+
 class CheddarPlayer(Player):
     WIDTH = 7
     HEIGHT = 6

@@ -4,6 +4,9 @@ import random
 import sys
 import math
 
+#
+# authors: Lucas and Daniel
+# date: May, 2020
 
 class LucasDaniel(Player):
 

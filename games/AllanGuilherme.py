@@ -2,6 +2,10 @@ from Player import Player
 import numpy as np
 from random import randint
 
+#
+# authors: Allan and Guilherme
+# date: May, 2020
+
 class AllanPlayer(Player):
 
     def name(self):

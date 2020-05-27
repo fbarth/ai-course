@@ -1,11 +1,12 @@
-
-
 from Player import Player
 import numpy as np
 import sys
 import math
 import random
 
+#
+# authors: Bruna and Jose
+# date: May, 2020
 
 class Bru_Jose(Player):
 
