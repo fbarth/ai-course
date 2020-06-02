@@ -2,8 +2,14 @@
 
 ## Faça a instalação do pacote Gym na sua máquina
 
+Para Mac ou Linux:
 ````
 pip3 install cmake 'gym[atari]' scipy
+````
+
+Para Windows:
+````
+py.exe -m pip install cmake 'gym[atari]' scipy
 ````
 
 ## Trabalhe com o arquivo [TaxiDriverGym_introduction.py](TaxiDriverGym_introduction.py)
@@ -29,6 +35,7 @@ q_table = qlearn.train('data/q-table-taxi-driver.csv', 'results/actions_taxidriv
 ````
 
 * Execute o arquivo [TaxiDriverGym.py](TaxiDriverGym.py) com o comando:
+
 ````
 python3 TaxiDriverGym.py
 ````
