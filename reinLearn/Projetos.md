@@ -16,10 +16,17 @@ parameters = {
     "episodes": [10000, 50000, 100000]
 }
 `````
-O relatório com a apresentação dos melhores resultados está em [grid_results/Report/Report.md](grid_results/Report/Report.md). 
+O relatório com a apresentação dos melhores resultados está em [grid_results/Report/Report.md](grid_results/Report/Report.md). A análise dos resultados mostra que a melhor configuração é
 
-* Jogador de Blackjack:  
+* alpha = 0.2
+* gamma = 0.99
+* epsilon = 0.8
+* episodes = 100000
 
-* Jogador de Roleta: 
+Com esta configuração o agente consegue chegar ao destino em 89 simulações das 100 testadas.  
 
-* Agente para controlar um módulo lunar: 
+## Jogador de Blackjack:  
+
+## Jogador de Roleta: 
+
+## Agente para controlar um módulo lunar: 
