@@ -24,13 +24,13 @@ env = gym.make('Roulette-v0').env
 #q_table = loadtxt('data/q-table-roulette.csv', delimiter=',')
 
 #2600loss - stable
-#qlearn = QLearning(env, alpha=0.001, gamma=0.001, epsilon=0.9, epsilon_min=0.001, epsilon_dec=0.9999, episodes=1000000)
+qlearn = QLearning(env, alpha=0.001, gamma=0.001, epsilon=0.9, epsilon_min=0.001, epsilon_dec=0.9999, episodes=1000000)
 
 # 500-1000loss - real player like
 #qlearn = QLearning(env, alpha=0.001, gamma=0.001, epsilon=0.9, epsilon_min=0.1, epsilon_dec=0.7, episodes=1000000)
-#q_table = qlearn.train('data/q-table-roulette.csv', None)
+q_table = qlearn.train('data/q-table-roulette.csv', None)
 
-q_table = loadtxt('data/q-table-roulette.csv', delimiter=',')
+#q_table = loadtxt('data/q-table-roulette.csv', delimiter=',')
 
 state = env.reset()
 done = False

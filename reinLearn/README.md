@@ -35,12 +35,15 @@ No comando acima deixa-se claro que a instalação é no pip3, ou seja, no pytho
 
 ## Exemplos não terminados
 
-- LunarLander.py: 
 - MsPacman.py: 
 
 ## Atividades
 
 Não deixe de ler o arquivo de [Atividades](Atividades.md). Este arquivo tem uma lista com propostas de exercícios para compreender melhor o projeto Gym e os conceitos relacionados com Aprendizagem por Reforço. 
+
+## Projetos implementados pelos alunos
+
+Para ver os projetos implementados pelos alunos, acesse o link [Projetos][Projetos.md]. Neste link você irá encontrar uma descrição e quais foram os resultados obtidos para cada projeto.
 
 ## Referências
 
