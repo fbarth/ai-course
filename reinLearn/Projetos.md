@@ -4,7 +4,7 @@ No primeiro semestre de 2020 os seguintes projetos envolvendo aprendizagem por r
 
 ## Agente para o ambiente Frozen Lake
 
-O ambiente Frozen Lake é um ambiente não determinístico onde um agente deve encontrar um caminho do lugar onde ele está para outro lugar passando por buracos. Se ele chegar no objetivo sem cair no buraco então ele termina a simulação tem 1 ponto de reward. Se ele cair em um dos buracos então ele termina a simulação com 0 pontos de reward. Como o chão é de gelo, não necessariamente a ação de ir para baixo vai levar o agente para baixo. Isto acontece com todas as quatro ações. Por isso que este ambiente é não determinístico. 
+O ambiente Frozen Lake é um ambiente não determinístico onde um agente deve encontrar um caminho do lugar onde ele está para outro lugar passando por buracos. Se ele chegar no objetivo sem cair no buraco então ele termina a simulação e tem 1 ponto de reward. Se ele cair em um dos buracos então ele termina a simulação com 0 pontos de reward. Como o chão é de gelo, não necessariamente a ação de ir para baixo vai levar o agente para baixo. Isto acontece com todas as quatro ações. Por isso que este ambiente é não determinístico. 
 
 O objetivo deste projeto é identificar os melhores hiperparâmetros para o agente usando uma abordagem de GridSearch. O código está no arquivo [FrozenLakeGridSearch.py](FrozenLakeGridSearch.py). Os valores testados para os hiperparâmetros foram: 
 
@@ -25,8 +25,14 @@ O relatório com a apresentação dos melhores resultados está em [grid_results
 
 Com esta configuração o agente consegue chegar ao destino em 89 simulações das 100 testadas.  
 
+## Jogador de Roleta: 
+
+
+
 ## Jogador de Blackjack:  
 
-## Jogador de Roleta: 
+
+
+
 
 ## Agente para controlar um módulo lunar: 
