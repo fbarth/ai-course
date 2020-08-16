@@ -43,7 +43,7 @@ Finished!
 Total Rewards:  0
 `````
 
-Ou seja, ~~o agente sempre escolhe como primeira ação dele sair do jogo!~~ 
+Ou seja, *o agente sempre escolhe como primeira ação dele sair do jogo!*
 
 
 ## Jogador de Blackjack:  
