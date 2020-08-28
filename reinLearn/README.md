@@ -43,7 +43,7 @@ Não deixe de ler o arquivo de [Atividades](Atividades.md). Este arquivo tem uma
 
 ## Projetos implementados pelos alunos
 
-Para ver os projetos implementados pelos alunos, acesse o link [Projetos][Projetos.md]. Neste link você irá encontrar uma descrição e quais foram os resultados obtidos para cada projeto.
+Para ver os projetos implementados pelos alunos, acesse o link [Projetos](Projetos.md). Neste link você irá encontrar uma descrição e quais foram os resultados obtidos para cada projeto.
 
 ## Referências
 

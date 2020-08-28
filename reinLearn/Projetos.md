@@ -25,7 +25,7 @@ O relatório com a apresentação dos melhores resultados está em [grid_results
 
 Com esta configuração o agente consegue chegar ao destino em 89 simulações das 100 testadas.  
 
-## Jogador de Roleta (Roulette-v0): 
+## Jogador de Roleta (Roulette-v0)
 
 Neste ambiente o agente pode jogar escolher um número entre 0 e 36 em um ambiente modificado de casino.
 Para cada rodada da roleta, o agente aposta em um número. O agente recebe uma recompensa de 35 pontos se ele apostar no 0 e o 0 for sorteado. O agente recebe uma recomensa de 1 ponto se ele apostar em um número e a paridade (par ou ímpar) do número sorteado for a mesma que o número escolhido pelo agenda. Em qualquer outra situação o agente recebe uma recompensa de -1. Além de escolher entre 0 e 36, o agente também pode escolher 37 que significa sair do jogo.
@@ -46,10 +46,20 @@ Total Rewards:  0
 Ou seja, *o agente sempre escolhe como primeira ação dele sair do jogo!*
 
 
-## Jogador de Blackjack:  
+## Jogador de Blackjack (Blackjack-v0)
+
+Este agente sabe jogar Blackjack. Ou melhor, sabe interagir com o ambiente Blackjack-v0 do projeto OpenAI. 
+
+Esta implementação faz uso de um GridSearch para determinar quais os melhores parâmetros. Os melhores parâmetros encontrados foram: 
+
+`````
+Alpha: 0.01
+Gamma: 0.0001
+Episodes: 700000
+`````
+
+PRECISO MUDAR!!!! A IMPLEMENTACAO CALCULA O NUMERO DE VITORIAS DURANTE O TREINAMENTO.
+EH NECESSARIO CALCULAR APOS TREINADO. 
 
 
-
-
-
-## Agente para controlar um módulo lunar: 
+## Agente para controlar um módulo lunar
