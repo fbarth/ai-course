@@ -4,9 +4,9 @@ No primeiro semestre de 2020 os seguintes projetos envolvendo aprendizagem por r
 
 ## Agente para o ambiente Frozen Lake (FrozenLake-v0)
 
-O ambiente Frozen Lake é um ambiente não determinístico onde um agente deve encontrar um caminho do lugar onde ele está para outro lugar passando por buracos. Se ele chegar no objetivo sem cair no buraco então ele termina a simulação e tem 1 ponto de reward. Se ele cair em um dos buracos então ele termina a simulação com 0 pontos de reward. Como o chão é de gelo, não necessariamente a ação de ir para baixo vai levar o agente para baixo. Isto acontece com todas as quatro ações. Por isso que este ambiente é não determinístico. 
+O ambiente Frozen Lake é um ambiente não determinístico onde um agente deve encontrar um caminho do lugar onde ele está para outro lugar passando por buracos. Se ele chegar no objetivo sem cair no buraco então ele termina a simulação e tem 1 ponto de reward. Se ele cair em um dos buracos então ele termina a simulação com 0 pontos de reward. Como o chão é de gelo, não necessariamente a ação de ir para baixo vai levar o agente para baixo, por exemplo. Isto acontece com todas as quatro ações. Por isso que este ambiente é não determinístico. 
 
-O objetivo deste projeto é identificar os melhores hiperparâmetros para o agente usando uma abordagem de GridSearch. O código está no arquivo [FrozenLakeGridSearch.py](FrozenLakeGridSearch.py). Os valores testados para os hiperparâmetros foram: 
+O objetivo deste projeto é identificar os melhores hiperparâmetros para o agente usando uma abordagem de GridSearch. O código está no arquivo [GridSearchQ.py](GridSearchQ.py). Os valores testados para os hiperparâmetros foram: 
 
 `````
 parameters = {
@@ -23,7 +23,11 @@ O relatório com a apresentação dos melhores resultados está em [grid_results
 * epsilon = 0.8
 * episodes = 100000
 
-Com esta configuração o agente consegue chegar ao destino em 89 simulações das 100 testadas.  
+Com esta configuração o agente consegue chegar ao destino em 89 simulações das 100 testadas.
+
+### Código GridSearchQ.py
+
+O código do arquivo [GridSearchQ.py](GridSearchQ.py) foi testado e validado para os ambientes FrokenLake-v0 e Blackjack-v0. O método init da classe GridSearchQ recebe o nome do environment para que o mesmo possa ser utilizado pela rotina de grid search.
 
 ## Jogador de Roleta (Roulette-v0)
 
@@ -58,8 +62,7 @@ Gamma: 0.0001
 Episodes: 700000
 `````
 
-PRECISO MUDAR!!!! A IMPLEMENTACAO CALCULA O NUMERO DE VITORIAS DURANTE O TREINAMENTO.
-EH NECESSARIO CALCULAR APOS TREINADO. 
+Para executar as simulações é necessário executar o arquivo [GridSearchQ.py](GridSearchQ.py) passando como parâmetro no método init o nome do environment "Blackjack-v0". 
 
 
 ## Agente para controlar um módulo lunar
