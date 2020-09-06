@@ -1,5 +1,5 @@
 import gym
-from QLearning import QLearning
+from QLearning_BlackJack import QLearning
 from numpy import loadtxt
 import numpy as np
 from IPython.display import clear_output
@@ -13,7 +13,7 @@ import sys
 # hyperparameters for the Frozen Lake problem.
 #
 
-class GridSearchQ:
+class GridSearchQBlack:
     
     grid = {
         "alpha": [], # Learning rate. The higher it is, more value it will give to new experiences
@@ -24,6 +24,12 @@ class GridSearchQ:
     def __init__(self, envDesc, grid):
         self.envDesc = envDesc
         self.grid = grid
+    
+    def stateNumber(self, state):
+        (x,y,z) = state
+        y = y * 32
+        z = z * 352
+        return x+y+z
 
     def inner_execution(self, env, a, g, ep, e):
         print("current alpha -> {}, gamma -> {}, epsilon -> {}, episodes -> {}".format(a,g,ep,e))
@@ -32,28 +38,28 @@ class GridSearchQ:
             "grid_data/q_table_{}_alpha_{}_gamma_{}_ep{}_e{}.csv".format(self.envDesc, a, g, ep, e), 
             "grid_results/actions_{}_alpha_{}_gamma_{}_ep{}_e{}".format(self.envDesc, a, g, ep, e)
             )
-                
+        
         rewards = 0
+        state= env.reset()
+        done = False
+        state = self.stateNumber(state)
+
         for i in range(101):
-            state = env.reset()
-            train_done = False
-            count = 0
-            while (not train_done) and (count < 200):
+            while not done:
                 action = np.argmax(q_table[state])
-                state, reward, train_done, _ = env.step(action)
-                count += 1
+                state, reward, done, info = env.step(action)
                 if reward == 1:
                     rewards += 1
+                state = self.stateNumber(state)
 
         self.results.append([a, g, ep, e, rewards])
     
     def execute(self):
-
         for i in self.grid:
             if len(i) == 0:
                 return
 
-        env = gym.make(self.envDesc).env
+        env = gym.make(self.envDesc)
         for a in self.grid["alpha"]:
             for g in self.grid["gamma"]:
                 for ep in self.grid["i_epsilon"]: 
@@ -74,24 +80,17 @@ class GridSearchQ:
 # This implementation is taking too much time to execute with
 # parameters bellow because the implementation is sequencial. 
 #
-#parameters = {
-#    "alpha": [1, 0.95, 0.9, 0.85, 0.8, 0.7, 0.5, 0.3, 0.2],
-#    "gamma": [0.99, 0.95, 0.90, 0.85, 0.80, 0.75, 0.50, 0.3],
-#    "i_epsilon": [0.9, 0.8, 0.7, 0.5],
-#    "episodes": [10000, 50000, 100000]
-#}
-
 parameters = {
-    "alpha": [0.3,0.2,0.1],
-    "gamma": [0.99, 0.95],
-    "i_epsilon": [0.9, 0.8, 0.7],
-    "episodes": [100000]
+    "alpha": [1, 0.95, 0.9, 0.85, 0.8, 0.7, 0.5, 0.3, 0.2],
+    "gamma": [0.99, 0.95, 0.90, 0.85, 0.80, 0.75, 0.50, 0.3],
+    "i_epsilon": [0.9, 0.8, 0.7, 0.5],
+    "episodes": [10000, 50000, 100000]
 }
 
-# 
-# Execute grid search for FrozenLake environment
 #
-grid = GridSearchQ('FrozenLake-v0', parameters)
+# Execute grid search for Blackjack environment
+#
+grid = GridSearchQBlack('Blackjack-v0', parameters)
 grid.execute()
 grid.printResults()
 
