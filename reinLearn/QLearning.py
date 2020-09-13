@@ -49,10 +49,10 @@ class QLearning:
                 state = next_state
                 actions += 1
 
-            if i % 100 == 0:
-                actions_per_episode.append(actions)
-                sys.stdout.write("Episodes: " + str(i) +'\r')
-                sys.stdout.flush()
+            #if i % 100 == 0:
+            #    actions_per_episode.append(actions)
+            #    sys.stdout.write("Episodes: " + str(i) +'\r')
+            #    sys.stdout.flush()
             
             if self.epsilon > self.epsilon_min:
                 self.epsilon = self.epsilon * self.epsilon_dec
