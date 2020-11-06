@@ -9,5 +9,5 @@ I am using this project to support the exercises in an Artificial Intelligence c
 5.	Game Playing, and;
 6.	Reinforcement Learning (I present in this course the concept of Learning from Observations, Supervised Learning and Unsupervised Learning. However, I have a specific course to discuss those topics. You can access this material [here](https://github.com/fbarth/ml-espm)).
 
-In this [video](https://www.youtube.com/watch?v=LsD24XDhIHg) I describe the scope of this course. The description is in Portuguese. 
+If you prefer, you can see the description of the course in this [video](https://www.youtube.com/watch?v=LsD24XDhIHg). 
 
