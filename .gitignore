@@ -4,5 +4,6 @@ __pycache__
 .ipynb_checkpoints/
 reinLearn/grid_results/*.jpg
 reinLearn/grid_data/*.csv
+videos
 
 
