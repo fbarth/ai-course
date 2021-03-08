@@ -25,6 +25,15 @@ We have four (4) folders:
 
 ## How to setup the environment? 
 
-In order to avoid any problem, I recommend ... (TODO)
+In order to avoid any problem, I recommend create a virtual environment: 
+
+````bash
+virtualenv venv
+source venv/bin/activate
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+````
+
+To quit the virtual environment, type `deactivate`. If you already have the virtual environment configured then type `source venv/bin/activate`. 
 
 

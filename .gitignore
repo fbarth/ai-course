@@ -5,5 +5,7 @@ __pycache__
 reinLearn/grid_results/*.jpg
 reinLearn/grid_data/*.csv
 videos
+venv
+
 
 
