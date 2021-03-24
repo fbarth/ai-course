@@ -94,6 +94,11 @@ def test_AEstrela2():
     tf = time.time()
     print('Tempo de processamento em segundos: ' + str(tf-ts))
     print('O custo da solucao eh: '+str(result.g))
+    #
+    # NAO ESTAH RETORNANDO A SOLUCAO OTIMA!!!
+    # NO ENTANTO, A CONFIGURACAO DO MAPHEURISTICS.CSV DEVERIA SER DE 
+    # H ADMISSIVEL
+    #
     assert result.show_path() == "i ; e ; m ; x"
 
 def test_AEstrela3():
