@@ -33,3 +33,55 @@ test_VacuumWorld.py ...                                                         
 ````
 
 Ou seja, todos os testes devem executar corretamente. 
+
+Para este projeto, você irá usar o arquivo `Map.py` e o arquivo `test_Map.py`. Você pode executar só o teste relacionado ao projeto **Map** com os seguintes comandos: 
+
+* `pytest test_Map.py`, ou;
+* `pytest test_Map.py --capture=tee-sys` par também visualizar as impressões. 
+
+Estas implementaçòes de teste são muito úteis pois você terá que implementar diversas modificações no arquivo `Map.py` e a única forma de garantir que você não inseriu nenhum *bug* durante este processo e executando os testes já especificados e outros que por ventura você queira adicionar. 
+
+Outra forma de verificar o funcionando do arquivo `Map.py` é executando o próprio arquivo: 
+
+````bash
+python Map.py
+````
+
+## Atividades
+
+Uma vez garantido que tudo está funcionando, vamos para as atividades! 
+
+A estrutura da class `Map` é muito similar as outras classes já estudadas nesta disciplina. 
+Possui os métodos da interface `State` implementados, como você pode ver abaixo. 
+
+````python
+class Map(State):
+
+    def __init__(self, city, cost, op, goal):
+    
+    def sucessors(self):
+
+    def is_goal(self):
+    
+    def description(self):
+    
+    def cost(self):
+    
+    def print(self):
+    
+    def env(self):
+
+    def h(self):
+
+    @staticmethod
+    def createArea():
+
+    @staticmethod
+    def createHeuristics():
+````
+
+No entanto, além destes métodos, a classe `Map` também possui outros dois métodos que são responsáveis pela inicialização do mapa entre cidades e da tabela de heurísticas utilizada na solução do problema: `createArea()` e `createHeuristics()`. Na declaração destes dois métodos você irá encontrar dois **TODO**. Faça o que está descrito nestes **TODO**. 
+
+Depois de alterados estes dois métodos, faça a carga de um mapa (com a sua respectiva heurística) mais realista. Com uma quantidade maior de cidades, como nomes mais realistas para as cidades, distâncias, etc. Lembre-se da heurística utilizada. Utilize uma heurística admissível para o problema. 
+
+Para testar a execução desta solução com este novo mapa, utilize também arquivos de teste. 

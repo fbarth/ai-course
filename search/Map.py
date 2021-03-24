@@ -46,6 +46,10 @@ class Map(State):
 
     @staticmethod
     def createArea():
+        #
+        # TODO mover a definicao do mapa de uma forma hard-coded para para leitura
+        # a partir de um arquivo, similar ao que é feito no metodo createHeuristics()
+        # 
         Map.area = {
             'a':[(3,'b'),(6,'c')],
             'b':[(3,'a'),(3,'h'),(3,'k')],
