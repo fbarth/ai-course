@@ -25,6 +25,20 @@ class ProblemSpecification(State):
         return str(self.operator)
     
     def env(self):
+        #
+        # IMPORTANTE: este não apenas deve retornar uma descrição do environment, mas 
+        # deve também retornar um valor que descreva aquele nodo em específico. Pois 
+        # esta representação é utilizada para verificar se um nodo deve ou ser adicionado 
+        # na lista de abertos.
+        #
+        # Exemplos de especificações adequadas: 
+        # - para o problema do soma 1 e 2: return str(self.number)+"#"+str(self.cost)
+        # - para o problema das cidades: return self.city+"#"+str(self.cost())
+        #
+        # Exemplos de especificações NÃO adequadas: 
+        # - para o problema do soma 1 e 2: return str(self.number)
+        # - para o problema das cidades: return self.city
+        #
         None
 
 

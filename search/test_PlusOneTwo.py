@@ -69,3 +69,12 @@ def test_largura_bigger():
     fim = datetime.now()
     print(fim - inicio)
 
+def test_largura_bigger_AEstrela():
+    state = PlusOneTwo(1, '', 500)
+    algorithm = AEstrela()
+    inicio = datetime.now()
+    result = algorithm.search(state)
+    fim = datetime.now()
+    print(fim - inicio)
+    print(result.show_path())
+

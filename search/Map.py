@@ -37,7 +37,7 @@ class Map(State):
         return str(self.operator)
     
     def env(self):
-        return self.city
+        return self.city+"#"+str(self.cost())
 
     def h(self):
         return int(Map.g.edges[self.city,self.goal]['distance'])
@@ -88,7 +88,7 @@ def main():
     Map.createHeuristics()
 
     print('Busca por algoritmo A*: sair de p e chegar em n')
-    state = Map('p', 0, 'p', 'n')
+    state = Map('i', 0, 'i', 'x')
     algorithm = AEstrela()
     ts = time.time()
     result = algorithm.search(state)

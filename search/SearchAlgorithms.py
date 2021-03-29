@@ -1,5 +1,7 @@
 from collections import deque
 from Graph import Node
+import logging
+logging.basicConfig(filename='search_algorithms.log', level=logging.DEBUG)
 
 # function used to sort a list
 def sortFunction(val):
@@ -123,7 +125,8 @@ class AEstrela (SearchAlgorithm):
             #list sorted by f()
             open.sort(key = sortFunction, reverse = True)
             n = open.pop()[0]
-            #print(n.state.env())
+            logging.debug(n.state.env()+" -- "+str(n.f())+" -- "+str(n.h()))
+
             if (n.state.is_goal()):
                 return n
             for i in n.state.sucessors():
@@ -135,9 +138,9 @@ class AEstrela (SearchAlgorithm):
                     # nao eh adiciona o estado ao vetor.
                     # eh adicionado o conteudo
                     states.append(new_n.state.env())
-                    #print(len(states))
-                #else: 
-                #    print('nao entrou')
+                    logging.debug(len(states))
+                else: 
+                    logging.debug('nao entrou')
         return None
 
 class SubidaMontanha (SearchAlgorithm):

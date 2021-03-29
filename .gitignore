@@ -6,6 +6,8 @@ reinLearn/grid_results/*.jpg
 reinLearn/grid_data/*.csv
 videos
 venv
+*.log
+
 
 
 
