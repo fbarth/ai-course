@@ -85,7 +85,3 @@ No entanto, além destes métodos, a classe `Map` também possui outros dois mé
 Depois de alterados estes dois métodos, faça a carga de um mapa (com a sua respectiva heurística) mais realista. Com uma quantidade maior de cidades, como nomes mais realistas para as cidades, distâncias, etc. Lembre-se da heurística utilizada. Utilize uma heurística admissível para o problema. 
 
 Para testar a execução desta solução com este novo mapa, utilize também arquivos de teste. 
-
-## Por que as soluções reportadas pela implementação não são ótimas? 
-
-Como vimos em sala de aula, a implementação `Map.py` não retorna uma solução ótima para o cenário `state = Map('i', 0, 'i', 'x')`. Por que? Identifique o problema e implemente uma solução. 
