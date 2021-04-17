@@ -1,4 +1,4 @@
-name: Python Package and Test
+name: Test
 
 on: [push]
 
@@ -19,12 +19,13 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pytest black
+#        pip install pytest black
+        pip install pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test with pytest
       run: |
         cd search
         pytest
-    - name: Python Black
-      run: |
-        black . --check
+#    - name: Python Black
+#      run: |
+#        black . --check
