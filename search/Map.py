@@ -37,6 +37,7 @@ class Map(State):
         return str(self.operator)
     
     def env(self):
+        #return self.city
         return self.city+"#"+str(self.cost())
 
     def h(self):

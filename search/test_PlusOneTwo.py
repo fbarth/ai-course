@@ -70,7 +70,7 @@ def test_largura_bigger():
     print(fim - inicio)
 
 def test_largura_bigger_AEstrela():
-    state = PlusOneTwo(1, '', 500)
+    state = PlusOneTwo(1, '', 501)
     algorithm = AEstrela()
     inicio = datetime.now()
     result = algorithm.search(state)

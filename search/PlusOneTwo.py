@@ -23,6 +23,7 @@ class PlusOneTwo(State):
 
     def env(self):
         return str(self.number)+"#"+str(self.cost)
+        #return str(self.number)
     
     def sucessors(self):
         sucessors = []
