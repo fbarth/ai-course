@@ -19,6 +19,8 @@ class FourInRow:
         self.players = [player1, player2]
 
     def printBoard(self):
+        # TODO fazer um print mais bonito. ainda em modo texto, mas mais 
+        # informativo, talvez com simbolos. 
         print(self.board)
         print("\n")
 
@@ -118,12 +120,12 @@ class FourInRow:
             if(dur > 10):
                 print('Player '+ self.players[k].name() + ' duration (seconds): '+ str(dur))
             self.printBoard()
-        print('Player ' + self.players[k].name() + ' is the winner!')
+        print('Player number '+ str(k)+ ": " + self.players[k].name() + ' is the winner!')
         # returning the winner name
         return self.players[k].name()
 
 def main():
-    FourInRow(LucasDaniel(), ManualPlayer()).game()
+    FourInRow(RandomPlayer(), ManualPlayer()).game()
 
 if __name__ == '__main__':
     main()
