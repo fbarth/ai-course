@@ -1,9 +1,6 @@
 from FourInRow import FourInRow
-from ManualPlayer import ManualPlayer
-from RandomPlayer import RandomPlayer
 from LucasDaniel import LucasDaniel
-import time
-import numpy as np
 
-def test_game():
+def test_run_game():
     f = FourInRow(LucasDaniel(), LucasDaniel()).game()
+
