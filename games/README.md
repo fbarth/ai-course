@@ -2,11 +2,15 @@
 
 Nesta pasta você irá encontrar arquivos que implementam o Jogo Liga4 (em inglês, *four in a row*) e o jogo da velha. 
 
-## Jogo da velha
+## Jogo da velha ($1^{o}$ semestre de 2021)
 
-**A ser implementado no 1o semestre de 2021**
+O jogo da velha é um jogo extremamente simples e amplamente conhecido, não necessitando descrições. 
 
-## Jogo Liga4
+O escopo do projeto de busca competitiva do $1^{o}$ semestre de 2021 será a implementação de um jogador para o jogo da velha. Cada equipe, formada com até duas pessoas, deverá implementar um jogador de jogo da velha para participar de um torneio. 
+
+Cada implementação deverá respeitar o exemplo descrito em [PlayerSpecificationJV.py](PlayerSpecificationJV.py). A implementação do jogo está em [JogoVelha.py](JogoVelha.py) e o campeonato está codificado em [TournamentJV.py]. Estes arquivos seguem uma estrutura muito similar a implementação dos jogadores, jogo e campeonato de Liga4. As equipes poderão usar estas implementações como exemplo para implementar os seus jogadores de jogo da velha. 
+
+## Jogo Liga4 ($1^{o}$ semestre de 2020)
 
 O Jogo Liga4 (em inglês, *four in a row*) é um jogo de tabuleiro jogado por duas pessoas, sem variável aleatória e de soma zero. Ou seja, um jogador pode ganhar, empatar ou perder o jogo. 
 
