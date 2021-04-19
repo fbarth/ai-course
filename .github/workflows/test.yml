@@ -25,6 +25,8 @@ jobs:
       run: |
         cd search
         pytest
+        cd ../games/
+        pytest
 #    - name: Python Black
 #      run: |
 #        black . --check
