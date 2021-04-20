@@ -10,6 +10,14 @@ O escopo do projeto de busca competitiva do $1^{o}$ semestre de 2021 será a imp
 
 Cada implementação deverá respeitar o exemplo descrito em [PlayerSpecificationJV.py](PlayerSpecificationJV.py). A implementação do jogo está em [JogoVelha.py](JogoVelha.py) e o campeonato está codificado em [TournamentJV.py]. Estes arquivos seguem uma estrutura muito similar a implementação dos jogadores, jogo e campeonato de Liga4. As equipes poderão usar estas implementações como exemplo para implementar os seus jogadores de jogo da velha. 
 
+As regras para a competição são:
+
+* Cada jogador só pode realizar movimentos válidos. Se um jogador realizar um movimento inválido qualquer ele será desclassificado da competição.
+
+* Todos os movimentos precisam ter uma duração máxima de XX segundos.
+
+* O campeonato será composto por jogos de ida e volta, ou seja, todo jogador jogará duas vezes contra o mesmo adversário. Sendo que em uma partida um jogador começa e na outra partida outro jogador começa. 
+
 ## Jogo Liga4 ($1^{o}$ semestre de 2020)
 
 O Jogo Liga4 (em inglês, *four in a row*) é um jogo de tabuleiro jogado por duas pessoas, sem variável aleatória e de soma zero. Ou seja, um jogador pode ganhar, empatar ou perder o jogo. 
