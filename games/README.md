@@ -6,9 +6,9 @@ Nesta pasta você irá encontrar arquivos que implementam o Jogo Liga4 (em ingl�
 
 O jogo da velha é um jogo extremamente simples e amplamente conhecido, não necessitando descrições. 
 
-O escopo do projeto de busca competitiva do $1^{o}$ semestre de 2021 será a implementação de um jogador para o jogo da velha. Cada equipe, formada com até duas pessoas, deverá implementar um jogador de jogo da velha para participar de um torneio. 
+O escopo do projeto de busca competitiva do 1o semestre de 2021 será a implementação de um jogador para o jogo da velha. Cada equipe, formada com até duas pessoas, deverá implementar um jogador de jogo da velha para participar de um torneio. 
 
-Cada implementação deverá respeitar o exemplo descrito em [PlayerSpecificationJV.py](PlayerSpecificationJV.py). A implementação do jogo está em [JogoVelha.py](JogoVelha.py) e o campeonato está codificado em [TournamentJV.py]. Estes arquivos seguem uma estrutura muito similar a implementação dos jogadores, jogo e campeonato de Liga4. As equipes poderão usar estas implementações como exemplo para implementar os seus jogadores de jogo da velha. 
+Cada implementação deverá respeitar o exemplo descrito em [PlayerSpecificationJV.py](PlayerSpecificationJV.py). A implementação do jogo está em [JogoVelha.py](JogoVelha.py) e o campeonato está codificado em [TournamentJV.py](TournamentJV.py). Estes arquivos seguem uma estrutura muito similar a implementação dos jogadores, jogo e campeonato de Liga4. As equipes poderão usar estas implementações como exemplo para implementar os seus jogadores de jogo da velha. 
 
 As regras para a competição são:
 
