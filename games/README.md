@@ -2,7 +2,7 @@
 
 Nesta pasta você irá encontrar arquivos que implementam o Jogo Liga4 (em inglês, *four in a row*) e o jogo da velha. 
 
-## Jogo da velha ($1^{o}$ semestre de 2021)
+## Jogo da velha (1o semestre de 2021)
 
 O jogo da velha é um jogo extremamente simples e amplamente conhecido, não necessitando descrições. 
 
@@ -18,7 +18,7 @@ As regras para a competição são:
 
 * O campeonato será composto por jogos de ida e volta, ou seja, todo jogador jogará duas vezes contra o mesmo adversário. Sendo que em uma partida um jogador começa e na outra partida outro jogador começa. 
 
-## Jogo Liga4 ($1^{o}$ semestre de 2020)
+## Jogo Liga4 (1o semestre de 2020)
 
 O Jogo Liga4 (em inglês, *four in a row*) é um jogo de tabuleiro jogado por duas pessoas, sem variável aleatória e de soma zero. Ou seja, um jogador pode ganhar, empatar ou perder o jogo. 
 
