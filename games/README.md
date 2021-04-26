@@ -16,6 +16,8 @@ As regras para a competição são:
 
 * Todos os movimentos precisam ter uma duração máxima de XX segundos.
 
+* Nenhum jogador pode perder do jogador aleatório.
+
 * O campeonato será composto por jogos de ida e volta, ou seja, todo jogador jogará duas vezes contra o mesmo adversário. Sendo que em uma partida um jogador começa e na outra partida outro jogador começa. 
 
 ## Jogo Liga4 (1o semestre de 2020)
