@@ -12,11 +12,13 @@ Cada implementação deverá respeitar o exemplo descrito em [PlayerSpecificatio
 
 As regras para a competição são:
 
-* Cada jogador só pode realizar movimentos válidos. Se um jogador realizar um movimento inválido qualquer ele será desclassificado da competição.
+* Cada jogador só pode realizar movimentos válidos. Se um jogador realizar qualquer movimento inválido então ele será desclassificado da competição e, consequentemente, ficará em último lugar na competição.
 
-* Todos os movimentos precisam ter uma duração máxima de XX segundos.
+* Todos os movimentos precisam ter uma duração máxima de 2 segundos.
 
 * O campeonato será composto por jogos de ida e volta, ou seja, todo jogador jogará duas vezes contra o mesmo adversário. Sendo que em uma partida um jogador começa e na outra partida outro jogador começa. 
+
+* Nenhum jogador poderá perder do jogador aleatório. Se perder do jogador aleatório então o competidor será posto em último lugar na competição.
 
 ## Jogo Liga4 (1o semestre de 2020)
 
