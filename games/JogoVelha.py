@@ -101,7 +101,7 @@ class JogoVelha:
             
 
 def main():
-    JogoVelha(ManualPlayerJV(), RandomPlayerJV()).game()
+    JogoVelha(RandomPlayerJV(), RandomPlayerJV()).game()
     JogoVelha(RandomPlayerJV(), RandomPlayerJV()).game()
 
 if __name__ == '__main__':

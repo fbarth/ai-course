@@ -22,6 +22,39 @@ As regras para a competição são:
 
 * Nenhum jogador poderá perder do jogador aleatório. Se perder do jogador aleatório então o competidor será posto em último lugar na competição.
 
+### Resultados da competição do 1o semestre de 2021
+
+Resultado da primeira execução: 
+
+````json
+{
+    'Barth JV': 6.5, 
+    'Random JV': 2.5, 
+    'BiggerBrainBot': 10.5, 
+    'Chad, from based department': 10.5, 
+    'Astolfo': 1, 
+    'Mari e Bia': 4, 
+    'Caio e Samuel': 10.5, 
+    'Tigas e Torto': 10.5
+}
+````
+
+Resultado da segunda execução:
+
+````json
+{
+    'Barth JV': 7.0, 
+    'Random JV': 2, 
+    'BiggerBrainBot': 10.5, 
+    'Chad, from based department': 10.5, 
+    'Astolfo': 1, 
+    'Mari e Bia': 4, 
+    'Caio e Samuel': 10.5, 
+    'Tigas e Torto': 10.5
+}
+````
+
+
 ## Jogo Liga4 (1o semestre de 2020)
 
 O Jogo Liga4 (em inglês, *four in a row*) é um jogo de tabuleiro jogado por duas pessoas, sem variável aleatória e de soma zero. Ou seja, um jogador pode ganhar, empatar ou perder o jogo. 
