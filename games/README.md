@@ -54,6 +54,8 @@ Resultado da segunda execução:
 }
 ````
 
+O log da segunda execução da competição está no arquivo [2021_01_competicao_jogo_velha.txt](2021_01_competicao_jogo_velha.txt).
+
 
 ## Jogo Liga4 (1o semestre de 2020)
 
