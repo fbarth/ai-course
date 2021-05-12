@@ -1,9 +1,10 @@
 from JogoVelha import JogoVelha
 from ManualPlayerJV import ManualPlayerJV
 from RandomPlayerJV import RandomPlayerJV
+from BarthJV import BarthJV
 
 players = [
-    ManualPlayerJV(),
+    BarthJV(),
     RandomPlayerJV()]
     
 points = {}

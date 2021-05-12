@@ -16,6 +16,8 @@ As regras para a competição são:
 
 * Todos os movimentos precisam ter uma duração máxima de 2 segundos.
 
+* Nenhum jogador pode perder do jogador aleatório.
+
 * O campeonato será composto por jogos de ida e volta, ou seja, todo jogador jogará duas vezes contra o mesmo adversário. Sendo que em uma partida um jogador começa e na outra partida outro jogador começa. 
 
 * Nenhum jogador poderá perder do jogador aleatório. Se perder do jogador aleatório então o competidor será posto em último lugar na competição.
