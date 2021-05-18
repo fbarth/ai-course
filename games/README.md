@@ -8,7 +8,7 @@ O jogo da velha é um jogo extremamente simples e amplamente conhecido, não nec
 
 O escopo do projeto de busca competitiva do 1o semestre de 2021 será a implementação de um jogador para o jogo da velha. Cada equipe, formada com até duas pessoas, deverá implementar um jogador de jogo da velha para participar de um torneio. 
 
-Cada implementação deverá respeitar o exemplo descrito em [PlayerSpecificationJV.py](PlayerSpecificationJV.py). A implementação do jogo está em [JogoVelha.py](JogoVelha.py) e o campeonato está codificado em [TournamentJV.py](TournamentJV.py). Estes arquivos seguem uma estrutura muito similar a implementação dos jogadores, jogo e campeonato de Liga4. As equipes poderão usar estas implementações como exemplo para implementar os seus jogadores de jogo da velha. 
+Cada implementação deverá respeitar o exemplo descrito em [tictactoe/PlayerSpecificationJV.py](tictactoe/PlayerSpecificationJV.py). A implementação do jogo está em [tictactoe/JogoVelha.py](tictactoe/JogoVelha.py) e o campeonato está codificado em [tictactoe/TournamentJV.py](tictactoe/TournamentJV.py). Estes arquivos seguem uma estrutura muito similar a implementação dos jogadores, jogo e campeonato de Liga4. As equipes poderão usar estas implementações como exemplo para implementar os seus jogadores de jogo da velha. 
 
 As regras para a competição são:
 
@@ -54,7 +54,7 @@ Resultado da segunda execução:
 }
 ````
 
-O log da segunda execução da competição está no arquivo [2021_01_competicao_jogo_velha.txt](2021_01_competicao_jogo_velha.txt).
+O log da segunda execução da competição está no arquivo [tictactoe/2021_01_competicao_jogo_velha.txt](tictactoe/2021_01_competicao_jogo_velha.txt).
 
 
 ## Jogo Liga4 (1o semestre de 2020)
