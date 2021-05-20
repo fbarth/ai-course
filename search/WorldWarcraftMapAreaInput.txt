@@ -1,0 +1,16 @@
+Orgrimmar,3,5,Thunder Bluff,Undercity,Kezan,Echo Isles,Silvermoon
+Azuremyst Isle,0,9,Darnassus,Stormwind
+Darnassus,0,10,Thunder Bluff,Azuremyst Isle,Stormwind
+Thunder Bluff,1,4,Orgrimmar,Darnassus
+Gadgetzan,3,0,Ahn Qiraj,Gurubashi Arena
+Echo Isles,3,4,Orgrimmar
+Stormwind,8,4,Ironforge,Darnassus,Gnomeregan,Kezan,Azuremyst Isle
+Scarlet Monastery,9,9,Undercity
+Gnomeregan,9,4,Stormwind,Ironforge,Gurubashi Arena,Molten Core
+Kezan,5,5,Orgrimmar,Stormwind
+Ahn Qiraj,0,0,Gadgetzan
+Molten Core,9,3,Ironforge,Gnomeregan
+Ironforge,8,5,Stormwind,Molten Core
+Gurubashi Arena,8,0,Gadgetzan,Gnomeregan
+Undercity,8,9,Orgrimmar,Silvermoon,Scarlet Monastery
+Silvermoon,10,10,Undercity,Orgrimmar
