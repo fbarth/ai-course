@@ -8,6 +8,11 @@ import networkx as nx
 import math
 import csv
 
+#
+# @author Lucas Cilento
+# May, 2021
+#
+
 class WorldWarcraftMap(State):
 
     def __init__(self, city, cost, op, goal):
