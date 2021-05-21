@@ -9,8 +9,8 @@ from numpy import loadtxt
 env = gym.make('FrozenLake-v0').env
 
 # only execute the following lines if you want to create a new q-table
-# qlearn = QLearning(env, alpha=0.9, gamma=0.95, epsilon=0.9, epsilon_min=0.001, epsilon_dec=0.9999, episodes=500000)
-# q_table = qlearn.train('data/q-table-frozen-lake.csv','results/actions_frozen_lake')
+#qlearn = QLearning(env, alpha=0.9, gamma=0.95, epsilon=0.9, epsilon_min=0.0001, epsilon_dec=0.9999, episodes=500000)
+#q_table = qlearn.train('data/q-table-frozen-lake.csv','results/actions_frozen_lake')
 q_table = loadtxt('data/q-table-frozen-lake.csv', delimiter=',')
 
 state = env.reset()

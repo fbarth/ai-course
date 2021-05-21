@@ -2,15 +2,20 @@
 
 ## Faça a instalação do pacote Gym na sua máquina
 
+Eventualmente, a instalação via arquivo `requirements.txt` pode não ter funcionado na sua máquina. Se foi este o caso então execute os comandos abaixo: 
+
 Para Mac ou Linux:
-````
+````bash
 pip3 install cmake 'gym[atari]' scipy
 ````
 
 Para Windows:
-````
+````bash
 py.exe -m pip install cmake 'gym[atari]' scipy
 ````
+
+Caso contrário, pode ignorar os comandos acima.
+
 
 ## Trabalhe com o arquivo [TaxiDriverGym_introduction.py](TaxiDriverGym_introduction.py)
 
@@ -26,8 +31,8 @@ py.exe -m pip install cmake 'gym[atari]' scipy
 
 ## Trabalhe com o arquivo [TaxiDriverGym.py](TaxiDriverGym.py)
 
-* Abra em um editor de texto e descomente as linhas 12 e 13 e comente a linha 14. O código deve ficar como abaixo:
-````
+* Abra em um editor de texto e descomente as linhas 11 e 12 e comente a linha 13. O código deve ficar como abaixo:
+````python
 # only execute the following lines if you want to create a new q-table
 qlearn = QLearning(env, alpha=0.1, gamma=0.6, epsilon=0.7, epsilon_min=0.05, epsilon_dec=0.99, episodes=100000)
 q_table = qlearn.train('data/q-table-taxi-driver.csv', 'results/actions_taxidriver')
@@ -36,8 +41,8 @@ q_table = qlearn.train('data/q-table-taxi-driver.csv', 'results/actions_taxidriv
 
 * Execute o arquivo [TaxiDriverGym.py](TaxiDriverGym.py) com o comando:
 
-````
-python3 TaxiDriverGym.py
+````bash
+python TaxiDriverGym.py
 ````
 
 Lembre-se que nesta execução o programa irá criar toda a Q-table e armazenar no arquivo data/q-table-taxi-driver.csv. Depois de calcular os valores para a Q-table o programa irá resolver um dos possíveis cenários considerando um estado inicial qualquer. Além disso, o programa irá gerar dois plots 
@@ -47,7 +52,7 @@ no diretório results que descrevem a quantidade de ações executadas em cada �
 
 * Qual é o comportamento do agente? Ele sempre consegue encontrar uma solução? As soluções parecem ser ótimas? 
 
-* Descomente novamente as linhas 12 e 13, comente a linha 14 e faça alpha receber 0 como apresentado na linha abaixo:
+* Descomente novamente as linhas 11 e 12, comente a linha 13 e faça alpha receber 0 como apresentado na linha abaixo:
 
 ````
 qlearn = QLearning(env, alpha=0, gamma=0.6, epsilon=0.7, epsilon_min=0.05, epsilon_dec=0.99, episodes=100000)
@@ -68,7 +73,8 @@ qlearn = QLearning(env, alpha=0, gamma=0.6, epsilon=0.7, epsilon_min=0.05, epsil
 ## Trabalhe com o arquivo [FrozenLake.py](FrozenLake.py)
 
 * Abra em um editor de texto e descomente as linhas 12 e 13 e comente a linha 14. O código deve ficar como abaixo:
-````
+
+````python
 # only execute the following lines if you want to create a new q-table
 qlearn = QLearning(env, alpha=0.9, gamma=0.95, epsilon=0.7, epsilon_min=0.1, epsilon_dec=0.9999, episodes=100000)
 q_table = qlearn.train('data/q-table-frozen-lake.csv','results/actions_frozen_lake')
@@ -76,8 +82,9 @@ q_table = qlearn.train('data/q-table-frozen-lake.csv','results/actions_frozen_la
 ````
 
 * Execute o arquivo [FrozenLake.py](FrozenLake.py) com o comando:
-````
-python3 FrozenLake.py
+
+````bash
+python FrozenLake.py
 ````
 
 * Os dois arquivos, TaxiDriver.py e FrozenLake.py, geraram os arquivos results/actions_taxidriver.jpg e results/actions_frozen_lake.jpg, respectivamente. Existe uma diferença significativa entre os arquivos? Se existir, diga qual é e justifique a sua resposta. 
@@ -87,5 +94,24 @@ python3 FrozenLake.py
 
 ## Próximo exercício: MountainCar.py
 
+* Leia a descrição do ambiente em [https://gym.openai.com/envs/MountainCarContinuous-v0/](https://gym.openai.com/envs/MountainCarContinuous-v0/).
+
+Execute o arquivo [MountainCar.py](MountainCar.py) com o comando:
+
+````bash
+python MountainCar.py
+````
+
+* Antes de mostrar o carro em movimento, a solução imprime um log. Cada linha termina com o texto "Actions in this episode NNN". Por que este texto começa com 200 e espera-se que ao longo da execução este número vá diminuindo?
+
+* A movimentação do carro aconteceu? Foi possível ver o carro se movimentando uma interface gráfica? O resultado apresentado mostrou um carro capaz de chegar no objetivo? 
+
+## Lunar Lander
+
+TODO
+
+## Projetos implementados pelos alunos
+
+Para ver os projetos implementados pelos alunos, acesse o link [Projetos](Projetos.md). Neste link você irá encontrar uma descrição e quais foram os resultados obtidos para cada projeto.
 
 

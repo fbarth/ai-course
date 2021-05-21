@@ -22,7 +22,7 @@ Para este problema existem duas implementações:
 
 * [GridSearchQConc.py](GridSearchQConc.py): trata-se de uma versão concorrente da implementação acima, ou seja, consegue executar todas as simulações em um tempo bem menor que a versão sequencial. Recomendamos a execução desta versão. Para a execução desta versão é necessário executar a seguinte ordem de comandos:
 
-````
+````bash
 ./execute_frozen_lake_grid_search.sh
 # após terminada a execução
 ./generate_results_frozen_lake.sh
@@ -31,14 +31,14 @@ Para este problema existem duas implementações:
 
 Os valores testados para os hiperparâmetros foram: 
 
-`````
+````json
 parameters = {
     "alpha": [1, 0.95, 0.9, 0.85, 0.8, 0.7, 0.5, 0.3, 0.2],
     "gamma": [0.99, 0.95, 0.90, 0.85, 0.80, 0.75, 0.50, 0.3],
     "i_epsilon": [0.9, 0.8, 0.7, 0.5],
     "episodes": [10000, 50000, 100000]
 }
-`````
+````
 
 O relatório com a apresentação dos melhores resultados está em [grid_results/Report/Report.md](grid_results/Report/Report.md). A análise dos resultados mostra que a melhor configuração é
 
@@ -51,11 +51,11 @@ Com esta configuração o agente consegue chegar ao destino em 89 simulações d
 
 ### Código GridSearchQ.py
 
-O código do arquivo [GridSearchQ.py](GridSearchQ.py) foi testado e validado para os ambientes FrokenLake-v0 e Blackjack-v0. O método init da classe GridSearchQ recebe o nome do environment para que o mesmo possa ser utilizado pela rotina de grid search.
+O código do arquivo [GridSearchQ.py](GridSearchQ.py) foi testado e validado para os ambientes `FrokenLake-v0` e `Blackjack-v0`. O método init da classe GridSearchQ recebe o nome do environment para que o mesmo possa ser utilizado pela rotina de grid search.
 
 ## Jogador de Roleta (Roulette-v0)
 
-Neste ambiente o agente pode jogar escolher um número entre 0 e 36 em um ambiente modificado de casino.
+Neste ambiente o agente pode jogar um número entre 0 e 36 em um ambiente modificado de casino.
 Para cada rodada da roleta, o agente aposta em um número. O agente recebe uma recompensa de 35 pontos se ele apostar no 0 e o 0 for sorteado. O agente recebe uma recomensa de 1 ponto se ele apostar em um número e a paridade (par ou ímpar) do número sorteado for a mesma que o número escolhido pelo agenda. Em qualquer outra situação o agente recebe uma recompensa de -1. Além de escolher entre 0 e 36, o agente também pode escolher 37 que significa sair do jogo.
 
 Um agente utilizando Reinforcement Learning está implementado em [Roulette.py](Roulette.py). Interessante notar que independente dos hiperparâmetros escolhidos, o resultado é sempre o mesmo: 
@@ -76,7 +76,7 @@ Ou seja, *o agente sempre escolhe como primeira ação dele sair do jogo!*
 
 ## Jogador de Blackjack (Blackjack-v0)
 
-Este agente sabe jogar Blackjack. Ou melhor, sabe interagir com o ambiente Blackjack-v0 do projeto OpenAI. 
+Este agente sabe jogar Blackjack. Ou melhor, sabe interagir com o ambiente `Blackjack-v0` do projeto OpenAI. 
 
 Esta implementação faz uso de um GridSearch para determinar quais os melhores parâmetros. Os melhores parâmetros encontrados foram: 
 
@@ -90,3 +90,4 @@ Para executar as simulações é necessário executar o arquivo [GridSearchQ.py]
 
 
 ## Agente para controlar um módulo lunar
+
