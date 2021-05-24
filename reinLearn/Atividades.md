@@ -108,7 +108,20 @@ python MountainCar.py
 
 ## Lunar Lander
 
-TODO
+* Leia a descrição do ambiente em [https://gym.openai.com/envs/LunarLander-v2/](https://gym.openai.com/envs/LunarLander-v2/).
+
+* Execute o script de exemplo: 
+
+```bash
+python LunarLander_introduction.py
+```
+
+e depois:
+
+```bash
+python LunarLander.py
+```
+
 
 ## Projetos implementados pelos alunos
 

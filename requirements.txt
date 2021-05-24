@@ -4,4 +4,7 @@ networkx
 termcolor
 IPython
 matplotlib
+Box2D
+keras
+tensorflow
 

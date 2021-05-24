@@ -91,3 +91,4 @@ Para executar as simulações é necessário executar o arquivo [GridSearchQ.py]
 
 ## Agente para controlar um módulo lunar
 
+Os códigos estão em [LunarLander_introduction.py](LunarLander_introduction.py) e [LunarLander.py](LunarLander.py) e a documentação está em [../docs/DeepQ-Learning.docx](../docs/DeepQ-Learning.docx).
