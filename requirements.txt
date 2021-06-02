@@ -7,4 +7,6 @@ matplotlib
 Box2D
 keras
 tensorflow
+jupyterlab
+gym-anytrading
 
