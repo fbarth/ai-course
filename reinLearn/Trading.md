@@ -35,11 +35,11 @@ Para isso, você deve fazer:
 
 * Executar e testar os arquivos listados acima. Se você executou a última versão do arquivo `requirements.txt` então você não precisa instalar via pip o `gym-anytrading`, nem o `jupyterlabs`. O pacote `gym-anytrading` é necessário para executar todos os códigos relacionados com trading e o `jupyterlabs` é necessário se você quiser usar o `jupyterlabs` para visualizar e editar os arquivos com formato `ipynb`. 
 
-* Assim como o exemplo [MountainCar.py](MountainCar.py), neste projeto de trading você terá que discretizar o estado. Sendo assim, a próxima tarefa é encontrar um formato para discretizar a representação do `state` ou `observation`. Prazo máximo: 09/06/2021.
+* Assim como o exemplo [MountainCar.py](MountainCar.py), neste projeto de trading você terá que discretizar o estado. Sendo assim, a próxima tarefa é encontrar um formato para discretizar a representação do `state` ou `observation`. Prazo máximo: 16/06/2021.
 
 * Depois disso, temos que implementar o algoritmo **QLearning** e verificar o seu desempenho. Prazo máximo: 16/06/2021. 
 
-* Por último. E este é um desafio! É tentar utilizar um dos algoritmos que estão em [Stable Baselines](https://stable-baselines.readthedocs.io/en/master/) para implementar um robô melhor que o implementado usando **QLearning**. O prazo máximo para esta atividade é: 23/06/2021. 
+* Por último. E este é um desafio! É tentar utilizar um dos algoritmos que estão em [Stable Baselines](https://stable-baselines.readthedocs.io/en/master/) para implementar um robô melhor que o implementado usando **QLearning**. O prazo máximo para esta atividade é: 16/06/2021. 
 
 ## Regras relacionadas com as entregas
 
