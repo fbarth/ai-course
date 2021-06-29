@@ -1,7 +1,6 @@
 import gym
 import matplotlib.pyplot as plt
 import numpy as np
-import random
 from collections import deque
 from keras import Sequential
 from keras.layers import Dense
@@ -22,7 +21,8 @@ np.random.seed(0)
 print('State space: ', env.observation_space)
 print('Action space: ', env.action_space)
 
-# para usar os ativadores de keras.activations é necessário usar o Sequential do keras também, não importar o do tensorflow
+# para usar os ativadores de keras.activations é necessário usar o Sequential do keras também, 
+# não importar o do tensorflow
 model = Sequential()
 model.add(Dense(512, activation=relu, input_dim=env.observation_space.shape[0]))
 model.add(Dense(256, activation=relu))

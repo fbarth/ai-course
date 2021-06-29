@@ -25,10 +25,10 @@ We have four (4) folders:
 
 ## How to setup the environment
 
-In order to avoid any configuration problem, I recommend to create a virtual environment: 
+In order to avoid any configuration problem, I recommend to create a virtual environment with python 3.7:
 
 ````bash
-virtualenv venv
+python3.7 -m virtualenv venv
 source venv/bin/activate
 python -m pip install --upgrade pip
 pip install -r requirements.txt

@@ -122,9 +122,15 @@ e depois:
 python LunarLander.py
 ```
 
-
 ## Projetos implementados pelos alunos
 
 Para ver os projetos implementados pelos alunos, acesse o link [Projetos](Projetos.md). Neste link você irá encontrar uma descrição e quais foram os resultados obtidos para cada projeto.
+
+## Referências
+
+- https://gym.openai.com/
+- https://github.com/openai/gym/wiki/FrozenLake-v0
+- https://github.com/openai/gym/wiki/MountainCar-v0
+- https://gym.openai.com/envs/LunarLander-v2/
 
 

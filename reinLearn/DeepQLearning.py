@@ -1,10 +1,6 @@
-import gym
 import numpy as np
 import random
-from keras import Sequential
-from keras.layers import Dense
 from keras.activations import relu, linear
-from keras.optimizers import adam
 
 #
 # This class implements the Deep Q-Learning algorithm.
