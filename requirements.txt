@@ -9,4 +9,6 @@ keras
 tensorflow
 jupyterlab
 gym-anytrading
+PyQt5
+stable-baselines
 

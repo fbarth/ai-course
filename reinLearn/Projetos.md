@@ -96,3 +96,4 @@ Os códigos estão em [LunarLander_introduction.py](LunarLander_introduction.py)
 
 ## Robô de trading implementado por alunos (turma 2021)
 
+O enunciado do projeto está em [trading/Trading.md](trading/Trading.md).

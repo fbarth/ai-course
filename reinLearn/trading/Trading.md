@@ -37,9 +37,9 @@ Para isso, você deve fazer:
 
 * Assim como o exemplo [MountainCar.py](MountainCar.py), neste projeto de trading você terá que discretizar o estado. Sendo assim, a próxima tarefa é encontrar um formato para discretizar a representação do `state` ou `observation`. Prazo máximo: 16/06/2021.
 
-* Depois disso, temos que implementar o algoritmo **QLearning** e verificar o seu desempenho. Prazo máximo: 16/06/2021. 
+* Depois disso, temos que implementar o algoritmo **QLearning** e verificar o seu desempenho. 
 
-* Por último. E este é um desafio! É tentar utilizar um dos algoritmos que estão em [Stable Baselines](https://stable-baselines.readthedocs.io/en/master/) para implementar um robô melhor que o implementado usando **QLearning**. O prazo máximo para esta atividade é: 16/06/2021. 
+* Por último. Utilize um dos algoritmos que estão em [Stable Baselines](https://stable-baselines.readthedocs.io/en/master/) para implementar um robô melhor que o implementado usando **QLearning**. 
 
 ## Regras relacionadas com as entregas
 
@@ -48,5 +48,9 @@ Para isso, você deve fazer:
 * As equipes deverão criar um projeto no Github e informar ao professor via canvas toda vez que tiver uma atualização relevante no projeto. Ou seja, toda vez que tiver uma das entregas intermediárias;
 
 * Teremos uma atividade aberta no canvas onde as equipes deverão informar o link para o Github e o nome dos participantes da equipe. Toda a troca de mensagens do professor da disciplina com a equipe deve acontecer via o sistema de mensagens desta atividade. 
+
+## Resultados obtidos com os trabalhos dos alunos
+
+TBD
 
 
