@@ -1,6 +1,8 @@
 # Code for Artificial Intelligence course
 
-I am using this project as a support to the exercises in an Artificial Intelligence course that is part of an undergraduate course at [ESPM](http://international.espm.br/), Computer Information Systems. The topics discussed in the course are: 
+I am using this project to support actitivies related to the Artificial Intelligence course that is part of an undergraduate course at [ESPM](http://international.espm.br/), Computer Information Systems. 
+
+The topics discussed in the course are: 
 
 1.	Artificial Intelligence Introduction;
 2.	Intelligent Agents;
