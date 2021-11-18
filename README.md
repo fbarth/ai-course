@@ -1,6 +1,6 @@
 # Code for Artificial Intelligence course
 
-I am using this project to support actitivies related to the Artificial Intelligence course that is part of an undergraduate course at [ESPM](http://international.espm.br/), Computer Information Systems. 
+I am using this project to support actitivies related to the Artificial Intelligence discipline that is part of an undergraduate course Computer Science. 
 
 The topics discussed in the course are: 
 
@@ -9,9 +9,7 @@ The topics discussed in the course are:
 3.	Solving Problems by Searching;
 4.	Informed Search Methods;
 5.	Game Playing;
-6.	Reinforcement Learning (Here, I present the concept of Learning from Observations, Supervised Learning and Unsupervised Learning. However, I have a specific course to discuss those topics. You can access this material [here](https://github.com/fbarth/ml-espm)).
-
-If you prefer, you can check the description of this course in this [video](https://www.youtube.com/watch?v=LsD24XDhIHg). 
+6.	Reinforcement Learning (Here, I present the concept of Learning from Observations, Supervised Learning and Unsupervised Learning. However, I have a specific course to discuss those topics. You can access this material [here](https://github.com/fbarth/ml-course)).
 
 ## How this project is structured 
 
